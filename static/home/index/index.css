@@ -79,26 +79,24 @@ body {
 #box .content{
     width: 1140px;
     height: 900px;
-    background-color: darkkhaki;
 }
 /* 主要内容左边部分 */
 #box .content .con-left-duo{
     width: 850px;
     height: 900px;
     display: inline-block;
-    background-color: darkcyan;
 }
 #box .content .con-left{
     width: 850px;
     height: 860px;
     display: inline-block;
-    background-color: darkcyan;
 }
 #box .content .con-left .con-left-con{
     width: 100%;
     height: 200px;
-    background-color: #ED7D31;
-    margin-bottom: 10px
+    margin-top: 10px;
+    box-shadow: 1px 1px 1px #999;
+    border-radius: 10px;
 }
 #box .content .con-left .con-left-con-a{
     display: block;
@@ -152,15 +150,38 @@ body {
     width: 290px;
     height: 900px;
     float: right;
-    background-color: coral;
     
 }
-
+#box .content .con-right .con-right-div{
+    width: 98%;
+    height: 140px;
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-left: 3px;
+    box-shadow: 3px 3px 2px #999;
+    border-radius: 10px;
+    
+}
+#box .content .con-right .con-right-div p{
+    padding-left: 20px;
+}
+#box .content .con-right .con-right-div p a{
+    color: rgb(26, 24, 24);
+}
+#box .content .con-right .con-right-div .chayu-div{
+    margin-top: 10px;
+    padding-left: 30px;
+}
+#box .content .con-right .con-right-div .chayu-div a{
+    color: #999;
+    font-size: 14px;
+}
 /*底部样式*/
 
 #box .bottom {
     width: 100%;
     background-color: #515151;
+    margin-top: 10px;
 }
 
 #box .bottom .bannerd {

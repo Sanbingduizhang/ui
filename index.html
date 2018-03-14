@@ -75,16 +75,19 @@
                 <!-- 遮盖层 -->
                 <div id='bg' class='login-bg'></div>
         </div>
-            <div class="con-left-duo">
-                <div class="con-left">
+        <!-- 内容左边部分 -->
+        <div class="con-left-duo">
+            <div class="con-left">
 
-                </div>
-                <div class="M-box1 m-style">
-
-                </div>  
             </div>
-            
-            <div class="con-right"></div>
+            <div class="M-box1 m-style">
+
+            </div>  
+        </div>
+        <!-- 内容右边部分 -->
+        <div class="con-right">
+
+        </div>
         </div>
         <!-- 底部 -->
         <div class='bottom'>
@@ -164,79 +167,4 @@
 </html>
 <script src="static/jquery-1.12.4.js"></script>
 <script src="static/jquery.pagination.js"></script>
-<script>
-    $(function (){
-        //标签生成方法
-        function su(data){
-            var article = data.data.article.data;
-            var len = article.length;
-            // 标签生成
-            var str = '';
-            for (var i = 0; i < len; i++) {
-            str +=  '<div class="con-left-con">'+
-                        '<a href="javascript:void(0);" class="con-left-con-a">'+
-                            '<div class="con-left-top">'+
-                                '<span class="con-left-top-title">'+article[i].title+'</span>'+
-                                '<span class="con-left-top-author">'+article[i].userinfo.name+'&nbsp;&nbsp;&nbsp;&nbsp;'+article[i].updated_at+'</span>'+
-                            '</div>'+
-                            '<div class="con-left-mid">'+
-                                '<p class="con-left-mid-desc">'+article[i].desc+'</p>'+
-                            '</div>'+
-                            '<div class="con-left-bot">'+
-                                '<span class="con-left-bot-cate">分类:'+article[i].cates.name+'</span>'+
-                                '<span class="con-left-bot-like">点赞('+article[i].like+')&nbsp;&nbsp;评论('+article[i].comment_count+')</span>'+
-                            '</div>'+
-                        '</a>'+
-                    '</div>';
-                };
-                return str;
-        };
-        $.ajax({
-                type:"GET",
-                url:"http://laravelgo.com/home/index",
-                dataType:"json",
-                success:function(data){
-                    var yema = data.data.article;
-                    var str = su(data);
-                    $('.con-left').html(str);
-                    $('.M-box1').pagination({
-                        totalData: yema.total,
-                        showData: yema.per_page,
-                        current:yema.current_page,
-                        coping: true,
-                        callback:function(api){
-                            $.ajax({
-                                type:"GET",
-                                url:"http://laravelgo.com/home/index?page="+api.getCurrent(),
-                                dataType:"json",
-                                success:function(data){
-                                    var str = su(data);
-                                    $('.con-left').html(str);
-                                    },
-                                error:function (jqXHR){
-                                    console.log(jqXHR);
-                                }
-                
-                            });
-                        },
-                    }); 
-                },
-                error:function (jqXHR){
-                    console.log(jqXHR);
-                }
-            });
-
-        //登录功能
-        $('#linkSub').click(function() {
-            $('#login').show();
-            $('#bg').show();
-        });
-        $('#closeBtn').click(function() {
-            $('#login').hide();
-            $('#bg').hide();
-        });
-
-    
-        //小火箭向上滑动
-    });
-</script>
+<script src="static/home/index/index.js"></script>
