@@ -58,7 +58,7 @@ function re(data){
 $(function (){
     $.ajax({
             type:"GET",
-            url:"http://laravelgo.com/home/article/index/3",
+            url:"http://www.heijiang.top/home/article/index/3",
             dataType:"json",
             success:function(data){
                 var yema = data.data;
@@ -77,7 +77,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://laravelgo.com/home/article/index/3?page="+api.getCurrent(),
+                            url:"http://www.heijiang.top/home/article/index/3?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 var str = su(data);
