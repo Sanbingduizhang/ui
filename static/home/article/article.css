@@ -11,7 +11,7 @@ body {
     width: 1140px;
     height: 2000px;
     margin: 0 auto;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
 }
 /* 头部的样式 */
 #box .header {
@@ -127,13 +127,15 @@ body {
 /* 主要内容右边部分 */
 #box .content .con-right{
     display: inline-block;
-    width: 290px;
+    width: 285px;
     height: 1320px;
     float: right;
-    background-color: palegoldenrod;
+    background-color: aliceblue;
+    box-shadow: 3px 3px 2px #999;
+    border-radius: 10px;
     
 }
-#box .content .con-right .con-right-div{
+/* #box .content .con-right .con-right-div{
     width: 98%;
     height: 140px;
     background-color: aliceblue;
@@ -160,4 +162,4 @@ body {
 #box .content .con-right .con-right-div .chayu-div a{
     color: #999;
     font-size: 14px;
-}
+} */
