@@ -9,11 +9,11 @@ $(function (){
         str +=  '<div class="con-left-con">'+
                     '<a href="javascript:void(0);" class="con-left-con-a">'+
                         '<div class="con-left-top">'+
-                            '<span class="con-left-top-title">'+article[i].title+'</span>'+
+                            '<span class="con-left-top-title">'+article[i].title.substring(0,20)+'...</span>'+
                             '<span class="con-left-top-author">'+article[i].userinfo.name+'&nbsp;&nbsp;&nbsp;&nbsp;'+article[i].updated_at+'</span>'+
                         '</div>'+
                         '<div class="con-left-mid">'+
-                            '<p class="con-left-mid-desc">'+article[i].desc+'</p>'+
+                            '<p class="con-left-mid-desc">'+article[i].content.substring(0,200)+'...</p>'+
                         '</div>'+
                         '<div class="con-left-bot">'+
                             '<span class="con-left-bot-cate">分类:'+article[i].cates.name+'</span>'+
@@ -48,13 +48,12 @@ $(function (){
         };
     $.ajax({
             type:"GET",
-            url:"http://laravelgo.com/home/index",
+            url:"http://www.heijiang.top/home/index",
             dataType:"json",
             success:function(data){
                 var yema = data.data.article;
                 var str = su(data);
                 var ree = re(data);
-                console.log(ree);
                 $('.con-left').html(str);
                 $('.con-right').html(ree);
                 $('.M-box1').pagination({
@@ -65,7 +64,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://laravelgo.com/home/index?page="+api.getCurrent(),
+                            url:"http://www.heijiang.top/home/index?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 var str = su(data);
