@@ -9,87 +9,63 @@ body {
 }
 #box{
     width: 1140px;
-    /* height: 2000px; */
+    height: 2000px;
     margin: 0 auto;
-    /* background-color: antiquewhite; */
+    background-color: antiquewhite;
 }
 /* 头部的样式 */
-.header {
+#box .header {
     width: 1140px;
     height: 80px;
     margin: 0 auto;
     /* background-color: aquamarine; */
-    background: url("head.png") no-repeat;
+    background: url('head.png') no-repeat;
     background-size: 100%;
+    line-height: 80px;
 }
-/* 头部左边导航栏 */
-#box .header .header-left li{
-    height: 40px;
-    width: 80px;
-    float: left;
-    text-align: center;
-    margin-left: 100px;
-    margin-top: 19px;
-    background-color: #ED7D31;
-    border: 1px solid #ED7D31;
-    border-radius: 20px;
+#box .header .cate{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(224, 85, 30);
+    padding-left: 100px;
 }
-#box .header .header-left li a {
-    display: block;
-    height: 40px;
-    width: 80px;
-    line-height: 40px;
-}
-
-#box .header .header-left li:hover {
-    background-color: #ED7D31;
-    /* border-radius: 50%; */
-}
-#box .header .header-left li:nth-child(1) {
-    margin-left: 0;
-}
-/* 头部右边的登陆 */
-#box .header .header-right li {
-    display: block;
-    height: 40px;
-    width: 60px;
+#box .header .sousuo{
     float: right;
-    text-align: center;
-    margin-top: 19px;
-    border-radius: 20px; 
-    /* margin-left: 10px; */
-    background-color: rgb(237, 49, 68);
+    padding-right: 10px;
 }
-
-#box .header .header-right li a {
-    display: block;
-    height: 40px;
-    width: 60px;
-    line-height: 40px;
+#box .header #search{
+    width: 400px;
+    height: 35px;
+    border-radius: 5px;
 }
-
-#box .header .header-right li a:active {
-    color: blue;
+#box .header #btnSea{
+    width: 40px;
+    height: 38px;
+    border: 1px solid #f0f1f2;
+    border-radius: 10px;
+    background: rgb(224, 85, 30);
 }
-
-#box .header .header-right li:nth-child(2) {
-    margin-right: 5px;
+#box .header #btnSea:hover{
+    cursor: pointer;
+    background: rgb(150, 224, 30);
 }
 /* 主要内容 */
 #box .content{
     width: 1140px;
-    height: 900px;
+    height: 1320px;
 }
 /* 主要内容左边部分 */
 #box .content .con-left-duo{
     width: 850px;
-    height: 900px;
+    height: 1320px;
     display: inline-block;
 }
 #box .content .con-left{
     width: 850px;
-    height: 860px;
+    height: 1280px;
     display: inline-block;
+    /* background-color: peru; */
 }
 #box .content .con-left .con-left-con{
     width: 100%;
@@ -97,6 +73,7 @@ body {
     margin-top: 10px;
     box-shadow: 1px 1px 1px #999;
     border-radius: 10px;
+    /* background-color: palevioletred; */
 }
 #box .content .con-left .con-left-con:hover{
     background-color: bisque;
@@ -151,8 +128,9 @@ body {
 #box .content .con-right{
     display: inline-block;
     width: 290px;
-    height: 900px;
+    height: 1320px;
     float: right;
+    background-color: palegoldenrod;
     
 }
 #box .content .con-right .con-right-div{

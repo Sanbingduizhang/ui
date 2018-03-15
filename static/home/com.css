@@ -1,0 +1,227 @@
+/* 底部样式 */
+
+#box .bottom {
+    width: 100%;
+    background-color: #515151;
+    margin-top: 10px;
+}
+
+#box .bottom .bannerd {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+#box .bottom .bannerd .bannerdt {
+    height: 127px;
+    width: 100%;
+    border-bottom: 1px solid #5f5f5f;
+}
+
+#box .bottom .bannerd .bannerdt .banttt {
+    width: 300px;
+    height: 55px;
+    float: left;
+    margin-left: 60px;
+    margin-top: 37px;
+}
+
+#box .bottom .bannerd .bannerdt .bant1 img {
+    margin-top: -20px;
+    border-radius: 50px;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 li {
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 li:first-child {
+    margin-left: 0;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 a {
+    color: #fff;
+    margin-right: 10px;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 li:last-child a {
+    margin-right: 0;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 .shenhe {
+    float: left;
+    font-size: 12px;
+    color: #999;
+    width: 300px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#box .bottom .bannerd .bannerdt .bant2 .shenhe span {
+    margin-right: 23px;
+}
+
+#box .bottom .bannerd .bannerdt .bant3 {
+    line-height: 55px;
+    margin-left: 120px;
+}
+
+#box .bottom .bannerd .bannerdt .bant3 .guanwo {
+    float: left;
+    color: #fff;
+}
+
+#box .bottom .bannerd .bannerdt .bant3 .guanzhu img {
+    width: 127px;
+    margin-top: -37px;
+    margin-left: 40px;
+}
+
+#box .bottom .bannerd .bannerdb {
+    height: 73px;
+    width: 100%;
+    font-size: 12px;
+    color: #999;
+    margin-top: 16px;
+}
+
+#box .bottom .bannerd .bannerdb .banndbt a {
+    margin-right: 18px;
+    color: #999;
+}
+
+#box .bottom .bannerd .bannerdb .banndbt .zzz {
+    float: left;
+    margin-left: 60px;
+}
+
+#box .bottom .bannerd .bannerdb .banndbt li {
+    float: left;
+    margin-left: 18px;
+}
+
+#clear {
+    clear: both;
+}
+
+
+/* 登陆注册部分 */
+/*页面登录隐藏区域样式*/
+
+#coverGo .login-header {
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+#coverGo .login {
+    width: 512px;
+    height: 280px;
+    position: absolute;
+    border: #ebebeb solid 1px;
+    left: 50%;
+    right: 50%;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 9999;
+    margin-left: -256px;
+    margin-top: 140px;
+    display: none;
+}
+
+#coverGo .login-title {
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    font-size: 18px;
+    position: relative;
+    cursor: move;
+    -moz-user-select: none;
+    /*火狐*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -ms-user-select: none;
+    /*IE10*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    user-select: none;
+}
+
+#coverGo .login-input-content {
+    margin-top: 20px;
+}
+
+#coverGo .login-button {
+    width: 50%;
+    margin: 30px auto 0px auto;
+    line-height: 40px;
+    font-size: 14px;
+    border: #ebebeb 1px solid;
+    text-align: center;
+}
+
+#coverGo .login-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    display: none;
+}
+
+#coverGo a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#coverGo .login-button a {
+    display: block;
+}
+
+#coverGo .login-input input.list-input {
+    float: left;
+    line-height: 35px;
+    height: 35px;
+    width: 350px;
+    border: #ebebeb 1px solid;
+    text-indent: 5px;
+}
+
+#coverGo .login-input {
+    overflow: hidden;
+    margin: 0px 0px 20px 0px;
+}
+
+#coverGo .login-input label {
+    float: left;
+    width: 90px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 35px;
+    height: 35px;
+    font-size: 14px;
+}
+
+#coverGo .login-title span {
+    position: absolute;
+    font-size: 12px;
+    right: -20px;
+    top: -30px;
+    background: #ffffff;
+    border: #ebebeb solid 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
