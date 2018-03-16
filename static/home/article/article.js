@@ -68,7 +68,7 @@ $(function (){
         var catemid = $(this).attr('catemid');
         $.ajax({
             type:"GET",
-            url:"http://laravelgo.com/home/article/index/"+catemid,
+            url:"http://www.heijiang.top/home/article/index/"+catemid,
             dataType:"json",
             success:function(data){
                 //页码
@@ -89,7 +89,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://laravelgo.com/home/article/index/"+catemid+"?page="+api.getCurrent(),
+                            url:"http://www.heijiang.top/home/article/index/"+catemid+"?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 //左边对应分类的文章
