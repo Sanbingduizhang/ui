@@ -39,6 +39,7 @@ body {
     height: 40px;
     width: 80px;
     line-height: 40px;
+    color: darkslategrey;
 }
 
 #box .header .header-left li:hover {

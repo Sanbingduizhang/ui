@@ -11,14 +11,12 @@ body {
     width: 1140px;
     height: 2000px;
     margin: 0 auto;
-    /* background-color: antiquewhite; */
 }
 /* 头部的样式 */
 #box .header {
     width: 1140px;
     height: 80px;
     margin: 0 auto;
-    /* background-color: aquamarine; */
     background: url('head.png') no-repeat;
     background-size: 100%;
     line-height: 80px;
@@ -38,6 +36,7 @@ body {
     width: 400px;
     height: 35px;
     border-radius: 5px;
+    margin-top: 22px;
 }
 #box .header #btnSea{
     width: 40px;
@@ -65,7 +64,6 @@ body {
     width: 850px;
     height: 1280px;
     display: inline-block;
-    /* background-color: peru; */
 }
 #box .content .con-left .con-left-con{
     width: 100%;
@@ -73,7 +71,6 @@ body {
     margin-top: 10px;
     box-shadow: 1px 1px 1px #999;
     border-radius: 10px;
-    /* background-color: palevioletred; */
 }
 #box .content .con-left .con-left-con:hover{
     background-color: bisque;
@@ -129,37 +126,67 @@ body {
     display: inline-block;
     width: 285px;
     height: 1320px;
-    float: right;
+    float: right;  
+}
+
+#box .content .con-right .con-right-title{
+    color: #999;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#box .content .con-right .con-right-li{
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 425px;
+}
+#box .content .con-right .con-right-li-li{
+    float: left;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+}
+#box .content .con-right .con-right-li-li .con-right-a{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    border: 1px solid #999;
+    border-radius: 20px;
+    color: rgb(151, 129, 129);
+}
+#box .content .con-right .con-right-li-li .con-right-a:hover{
+    background-color: bisque;
+}
+#box .content .con-right .con-right-re{
     background-color: aliceblue;
     box-shadow: 3px 3px 2px #999;
     border-radius: 10px;
-    
+    height: 200px;
 }
-/* #box .content .con-right .con-right-div{
-    width: 98%;
-    height: 140px;
+#box .content .con-right .guanggao{
+    height: 400px;
+}
+#box .content .con-right .con-right-ref{
     background-color: aliceblue;
-    margin-top: 10px;
-    margin-left: 3px;
     box-shadow: 3px 3px 2px #999;
     border-radius: 10px;
-    
 }
-#box .content .con-right .con-right-div:hover{
-    cursor: pointer;
-    background-color: #f0f1f2;
-}
-#box .content .con-right .con-right-div p{
-    padding-left: 20px;
-}
-#box .content .con-right .con-right-div p a{
-    color: rgb(26, 24, 24);
-}
-#box .content .con-right .con-right-div .chayu-div{
+#box .content .con-right .con-right-rec{
+    color: #999;
+    font-size: 16px;
+    margin-left: 20px;
     margin-top: 10px;
-    padding-left: 30px;
 }
-#box .content .con-right .con-right-div .chayu-div a{
+#box .content .con-right .con-right-recon .con-right-recon-li{
+    margin-left: 30px;
+    margin-bottom: 1px;
+    width: 215px;
+}
+#box .content .con-right .con-right-recon .con-right-recon-a{
     color: #999;
     font-size: 14px;
-} */
+}
+#box .content .con-right .con-right-recon .con-right-recon-a:hover{
+    color: gray;
+}
