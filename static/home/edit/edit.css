@@ -1,0 +1,25 @@
+#box{
+    width: 100%;
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+#title{
+    height: 70px;
+}
+#box #boxedit{
+    width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px 0 #CCC;
+    background: #F6F4EC;
+}
+#box #boxedit .edittext{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+#box #boxedit .edittext .text,select{
+    margin-left: 10px;
+}
+#box #boxedit .edittext .text{
+    width: 500px;
+    height: 20px;
+}

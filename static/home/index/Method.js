@@ -21,7 +21,7 @@ function su(data){
                         '<span class="con-left-top-author">'+article[i].userinfo.name+'&nbsp;&nbsp;&nbsp;&nbsp;'+article[i].updated_at+'</span>'+
                     '</div>'+
                     '<div class="con-left-mid">'+
-                        '<p class="con-left-mid-desc">'+article[i].content.substring(0,200)+'...</p>'+
+                        '<p class="con-left-mid-desc">'+article[i].desc.substring(0,200)+'...</p>'+
                     '</div>'+
                     '<div class="con-left-bot">'+
                         '<span class="con-left-bot-cate">分类:'+article[i].cates.name+'</span>'+

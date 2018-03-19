@@ -5,7 +5,7 @@ $(function (){
     var id = Number(window.location.href.split('?')[1].split('=')[1]);
     $.ajax({
             type:"GET",
-            url:"http://www.heijiang.top/home/article/index/"+id+"?right=769",
+            url:"http://laravelgo.com/home/article/index/"+id+"?right=769",
             dataType:"json",
             success:function(data){
                 //页码
@@ -35,7 +35,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://www.heijiang.top/home/article/index/"+id+"?page="+api.getCurrent(),
+                            url:"http://laravelgo.com/home/article/index/"+id+"?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 //左边对应分类的文章
@@ -68,7 +68,7 @@ $(function (){
         var catemid = $(this).attr('catemid');
         $.ajax({
             type:"GET",
-            url:"http://www.heijiang.top/home/article/index/"+catemid,
+            url:"http://laravelgo.com/home/article/index/"+catemid,
             dataType:"json",
             success:function(data){
                 //页码
@@ -89,7 +89,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://www.heijiang.top/home/article/index/"+catemid+"?page="+api.getCurrent(),
+                            url:"http://laravelgo.com/home/article/index/"+catemid+"?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 //左边对应分类的文章
@@ -117,7 +117,7 @@ $(function (){
         }else{
             $.ajax({
                 type:"GET",
-                url:"http://www.heijiang.top/home/article/index?search="+serRes,
+                url:"http://laravelgo.com/home/article/index?search="+serRes,
                 dataType:"json",
                 success:function(data){
                     //页码
@@ -138,7 +138,7 @@ $(function (){
                         callback:function(api){
                             $.ajax({
                                 type:"GET",
-                                url:"http://www.heijiang.top/home/article/index?page="+api.getCurrent()+"&search="+serRes,
+                                url:"http://laravelgo.com/home/article/index?page="+api.getCurrent()+"&search="+serRes,
                                 dataType:"json",
                                 success:function(data){
                                     //左边对应分类的文章

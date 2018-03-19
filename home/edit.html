@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='shortcut icon' href='../favicon.ico'>
+    <link rel="stylesheet" href="../static/home/edit/edit.css">
+    <title>编辑页面</title>
+</head>
+<body>
+    <div id="title">导航</div>
+    <div id="box">
+        <div id="boxedit">
+            <div class="cate edittext">
+                    分类:<select name="select" class="select" style="width:90px;height:25px">
+                            <option value="1" selected="selected">红袖添香</option>
+                            <option value="2">红袖添香</option>
+                            <option value="3">红袖添香</option>
+                            <option value="4">红袖添香</option>
+                        </select>
+                </div>
+                <div class="title edittext">
+                    文章标题:
+                    <input type="text" class="text" name="text" value="">
+                </div>
+                <div class="desc edittext">
+                    <p>文章描述:</p>
+                    <p><textarea name="textarea" class="textarea" cols="80" rows="5"></textarea></p>
+                    
+                </div>
+                <div class="content edittext">
+                    文章内容:
+                    <div id="editor"></div>
+        
+                </div>
+                <div class="publish edittext">
+                    是否发布:
+                    <input type="radio" value="1" name="publish" class="publish" checked="checked">发布
+                    <input type="radio" value="0" name="publish" class="publish">暂不发布
+                </div>
+                <div class="btn edittext">
+                    <button class="btnsave">保存</button>
+                    <button class="benback">撤销</button>
+                </div>
+
+        </div>
+        
+
+        
+    </div>
+
+    
+</body>
+</html>
+<script src="../static/jquery-1.12.4.js"></script>
+<script src="../static/wangEditor.min.js"></script>
+<script src="../static/home/edit/edit.js"></script>
+<script type="text/javascript">
+    var E = window.wangEditor
+    var editor = new E('#editor')
+    // 或者 var editor = new E( document.getElementById('editor') )
+    editor.create();
+    $('.btnsave').click(function(){
+        var cate=$(".cate option:selected").val();  //获取选中的项
+        console.log(cate);
+        var title = $('.text').val();       //获取标题
+        var desc = $('.textarea').val();    //获取描述内容
+        var publish = $("input[name='publish']:checked").val();     //获取是否发布
+        var content = editor.txt.html();    //获取文本编辑框的信息
+        var con_len = editor.txt.text().length;
+            $.ajax({
+                type:"POST",
+                url:"http://laravelgo.com/home/article/create",
+                data:{
+                    cateId:cate,
+                    title:title,
+                    desc:desc,
+                    publish:publish,
+                    content:content,
+                    words:con_len,
+                },
+                dataType:"json",
+                success:function(data){
+                    alert('添加成功');
+                    window.location.href="../index.html";
+                },
+                error:function (jqXHR){
+                    alert(jqXHR);
+                }
+            });
+        });
+</script>
