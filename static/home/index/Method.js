@@ -15,7 +15,7 @@ function su(data){
     var str = '';
     for (var i = 0; i < len; i++) {
     str +=  '<div class="con-left-con">'+
-                '<a href="javascript:void(0);" class="con-left-con-a">'+
+                '<a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">'+
                     '<div class="con-left-top">'+
                         '<span class="con-left-top-title">'+article[i].title.substring(0,20)+'...</span>'+
                         '<span class="con-left-top-author">'+article[i].userinfo.name+'&nbsp;&nbsp;&nbsp;&nbsp;'+article[i].updated_at+'</span>'+

@@ -160,5 +160,12 @@ $(function (){
         };
 
     });
+
+
+    //点击文章跳转到详情页
+    $('.con-left').on('click','.con-left-con-a',function(){
+        var articleid = $(this).attr('articleid');
+        window.location.href='http://public.com/ui/home/ardetail.html?articleid='+articleid;
+    });
 });
 

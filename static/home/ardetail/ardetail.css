@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    text-decoration: none;
+}
+body {
+    background-color: #f0f1f2;
+}
+
+
+#title{
+    height: 40px;
+    width: 100%;
+    background-color: rgb(247, 245, 243);
+}
+#title .titletext{
+    width: 1170px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+}
+#title .titletext .titletleft{
+    float: left;
+    display: inline-block;
+}
+#title .titletext .titletright{
+    float: right;
+    display: inline-block;
+}
+#box{
+    width: 100%;
+    height: 2000px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+#box #leftFloatBar .barList li{
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#box #content #textwarp{
+    width: 800px;
+    height: 2000px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px 0 #CCC;
+    background: #F6F4EC;
+}
+#box #content #textwarp #text{
+    width:90%;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: rgb(255, 217, 0); */
+}
+h1{
+    padding-top: 24px;
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #000;
+}
+#box #content #textwarp #text .texttitle .textinfo{
+    margin-bottom: 10px;
+}
+#box #content #textwarp #text .texttitle .textinfo span,a{
+    color:#999;
+    margin-left: 15px;
+   
+}
+#box #content #textwarp #text .texttitle .textinfo span:nth-child(1){
+    margin-left: 0;
+}
+#box #content #textwarp #text .copytext{
+    line-height: 1.8;
+    font-size: 16px;
+    padding-top: 16px;
+    min-height: 360px;
+    word-break: break-all;
+}
