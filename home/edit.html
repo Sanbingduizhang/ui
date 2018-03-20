@@ -14,10 +14,7 @@
         <div id="boxedit">
             <div class="cate edittext">
                     分类:<select name="select" class="select" style="width:90px;height:25px">
-                            <option value="1" selected="selected">红袖添香</option>
-                            <option value="2">红袖添香</option>
-                            <option value="3">红袖添香</option>
-                            <option value="4">红袖添香</option>
+                            
                         </select>
                 </div>
                 <div class="title edittext">
@@ -55,10 +52,29 @@
 </html>
 <script src="../static/jquery-1.12.4.js"></script>
 <script src="../static/wangEditor.min.js"></script>
+<script src="../static/home/edit/Method.js"></script>
 <script src="../static/home/edit/edit.js"></script>
 <script type="text/javascript">
-    var E = window.wangEditor
-    var editor = new E('#editor')
+    $(function(){
+        $.ajax({
+            type:"GET",
+            url:"http://www.heijiang.top/home/article/cate",
+            dataType:"json",
+            success:function(data){
+                var cates = cate(data);
+                $('.select').html(cates);
+            },
+            error:function (jqXHR){
+                alert(jqXHR);
+            }
+        });
+    });
+
+
+
+
+    var E = window.wangEditor;
+    var editor = new E('#editor');
     // 或者 var editor = new E( document.getElementById('editor') )
     editor.create();
     $('.btnsave').click(function(){
@@ -83,7 +99,7 @@
                 dataType:"json",
                 success:function(data){
                     alert('添加成功');
-                    window.location.href="../index.html";
+                    window.location.href="../admin/admin/admin.html";
                 },
                 error:function (jqXHR){
                     alert(jqXHR);
