@@ -50,6 +50,6 @@ $(function (){
     //点击文章跳转到详情页
     $('.con-left').on('click','.con-left-con-a',function(){
         var articleid = $(this).attr('articleid');
-        window.location.href='../home/ardetail.html?articleid='+articleid;
+        window.location.href='http://blog.heijiang.top/../home/ardetail.html?articleid='+articleid;
     });
 });
