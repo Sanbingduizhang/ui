@@ -21,7 +21,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://www.heijiang.top/home/index?page="+api.getCurrent(),
+                            url:"http://www.heijiang.top/admin/index?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 var str = su(data);
