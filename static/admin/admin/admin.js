@@ -42,7 +42,7 @@ $(function (){
     //点击文章跳转到详情页
     $('.con-left').on('click','.con-left-con-a',function(){
         var articleid = $(this).attr('articleid');
-        window.location.href='http://public.com/ui/home/ardetail.html?articleid='+articleid;
+        window.location.href='../home/ardetail.html?articleid='+articleid;
     });
     //点击右边分类加载对应页面
     $('.con-right-li-ul').on('click','.con-right-a',function(){
