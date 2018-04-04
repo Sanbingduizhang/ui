@@ -33,9 +33,22 @@ body {
     margin: 0 auto;
     background-color: antiquewhite;
 }
-#box #leftFloatBar .barList li{
+#box #leftFloatBar{
+    float: right;
+}
+#box #comment{
+    float: right;
+    border: 1px solid #000;
+    width: 333px;
+    height: 800px;
+}
+#box #leftFloatBar .barList li a{
     border: 1px solid #ccc;
     text-align: center;
+    width: 80px;
+    height: 75px;
+    display: inline-block;
+    line-height: 75px;
 }
 
 #box #content #textwarp{

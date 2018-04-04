@@ -51,5 +51,6 @@ $(function (){
     $('.con-left').on('click','.con-left-con-a',function(){
         var articleid = $(this).attr('articleid');
         window.location.href='http://blog.heijiang.top/../home/ardetail.html?articleid='+articleid;
+        // window.location.href='http://public.com/ui/home/ardetail.html?articleid='+articleid;
     });
 });
