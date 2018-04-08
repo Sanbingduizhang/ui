@@ -3,7 +3,7 @@ function title(data){
     var cate_len = cate.length; 
     var str = '';
     for(var i = 0;i < cate_len;i++) {
-        str += '<li><a href="home/article.html?id='+cate[i].id+'" class="index-head-title">'+cate[i].name+'</a></li>';
+        str += '<li><a href="javascript:void(0);" hrefid="'+cate[i].id+'" class="index-head-title">'+cate[i].name+'</a></li>';
     }
     return str;
 };

@@ -47,7 +47,7 @@ function su(data){
 function ajaxgo(catemid){
     $.ajax({
         type:"GET",
-        url:"http://www.heijiang.top/admin/index/"+catemid,
+        url:"http://laravelgo.com/admin/index/"+catemid,
         dataType:"json",
         success:function(data){
             //页码
@@ -68,7 +68,7 @@ function ajaxgo(catemid){
                 callback:function(api){
                     $.ajax({
                         type:"GET",
-                        url:"http://www.heijiang.top/admin/index/"+catemid+"?page="+api.getCurrent(),
+                        url:"http://laravelgo.com/admin/index/"+catemid+"?page="+api.getCurrent(),
                         dataType:"json",
                         success:function(data){
                             //左边对应分类的文章

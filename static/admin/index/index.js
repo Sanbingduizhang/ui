@@ -1,7 +1,7 @@
 $(function (){
     $.ajax({
             type:"GET",
-            url:"http://www.heijiang.top/home/index",
+            url:"http://laravelgo.com/home/index",
             dataType:"json",
             success:function(data){
                 var yema = data.data.article;
@@ -20,7 +20,7 @@ $(function (){
                     callback:function(api){
                         $.ajax({
                             type:"GET",
-                            url:"http://www.heijiang.top/home/index?page="+api.getCurrent(),
+                            url:"http://laravelgo.com/home/index?page="+api.getCurrent(),
                             dataType:"json",
                             success:function(data){
                                 var str = su(data);
