@@ -7,7 +7,7 @@ $(function (){
     $('#btnSea').click(function(){
             $.ajax({
                 type:"POST",
-                url:"http://laravelgo.com/home/photo/uploads",
+                url:"http://www.heijiang.top/home/photo/uploads",
                 dataType:"json",
                 
                 success:function(data){
@@ -29,7 +29,7 @@ $(function (){
                         callback:function(api){
                             $.ajax({
                                 type:"GET",
-                                url:"http://laravelgo.com/home/article/index?page="+api.getCurrent()+"&search="+serRes,
+                                url:"http://www.heijiang.top/home/article/index?page="+api.getCurrent()+"&search="+serRes,
                                 dataType:"json",
                                 success:function(data){
                                     //左边对应分类的文章

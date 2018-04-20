@@ -1,9 +1,9 @@
 $(function(){
     var articleid = Number(window.location.href.split('?')[1].split('=')[1]);
-    console.log(articleid);
+    // console.log(articleid);
     $.ajax({
         type:"GET",
-        url:"http://laravelgo.com/home/article/uindex/"+articleid,
+        url:"http://www.heijiang.top/home/article/uindex/"+articleid,
         dataType:"json",
         success:function(data){
             var detailtitle = detitle(data);

@@ -58,7 +58,7 @@
     $(function(){
         $.ajax({
             type:"GET",
-            url:"http://laravelgo.com/home/article/cate",
+            url:"http://www.heijiang.top/home/article/cate",
             dataType:"json",
             success:function(data){
                 var cates = cate(data);
@@ -87,7 +87,7 @@
         var con_len = editor.txt.text().length;
             $.ajax({
                 type:"POST",
-                url:"http://laravelgo.com/home/article/create",
+                url:"http://www.heijiang.top/home/article/create",
                 data:{
                     cateId:cate,
                     title:title,
