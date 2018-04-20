@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../static/pagination.css">
     <link rel="stylesheet" href="../static/home/photo/photo.css">
     <link rel="stylesheet" href="../static/home/com.css">
+    <link rel="stylesheet" href="../static/home/photo/upload/zyUpload.css">
     <title>图文详情</title>
 </head>
 <body>
@@ -15,10 +16,17 @@
         <div class="header">
             <span class="cate">古道人家</span>
             <span class="sousuo">
-                <input type="text" name="" id="search">
-                <button id="btnSea">搜索</button>    
+                <!-- <input type="text" name="" id="search"> -->
+                
+                <button id="btnUpload">新建</button>    
             </span>
         </div>
+        <div id='coverGo'>
+            <div id="demo" class="demo" style="display: none;width: 500px;height: 700px;"></div>
+            <!-- 遮盖层 -->
+            <div id='bg' class='login-bg'></div>
+        </div>
+        <!-- <div id="demo" class="demo" style="display: none;width: 500px;height: 700px;"></div> -->
         <!-- 中间主体部分 -->
         <div class="content">
                 <!-- 内容左边部分 -->
@@ -54,6 +62,21 @@
                                             <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
                                         </a>
                                     </div>
+                                    <div class="con-left-con">
+                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
+                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
+                                        </a>
+                                    </div>
+                                    <div class="con-left-con">
+                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
+                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
+                                        </a>
+                                    </div>
+                                    <div class="con-left-con">
+                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
+                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
+                                        </a>
+                                    </div>
                     </div>
                     <div class="M-box1 m-style">
     
@@ -68,35 +91,6 @@
                             </ul>
                         </div>
                     </div>  
-                    <div class="con-right-re">
-                        <div class="con-right-rec">推荐>>></div>
-                        <div class="con-right-recon">
-                            <ul class="con-right-recon-ul">
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="con-right-re">
-                        <div class="con-right-rec">热门>>></div>
-                        <div class="con-right-recon">
-                            <ul class="con-right-re-ul">
-                            </ul>
-                            
-                        </div>
-                    </div>
-                                 
-                    <div class="con-right-re guanggao">
-                        <div class="con-right-rec">广告投放>>></div>
-                        <div class="con-right-recon">
-                            <li class="con-right-recon-li right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" aaa="1">文章已其他的</a></li>
-                            <li class="con-right-recon-li right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" aaa="2">文章已其他的</a></li>
-                            <li class="con-right-recon-li right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" aaa="3">文章已其他的</a></li>
-                            <li class="con-right-recon-li right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" aaa="4">文章已其他的</a></li>
-                            <li class="con-right-recon-li right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" aaa="5">文章已其他的</a></li>
-                            
-                        </div>
-                    </div>
-                    
-                    
                 </div>
         </div>
             <!-- 底部 -->
@@ -180,3 +174,6 @@
 <script src="../static/jquery.pagination.js"></script>
 <script src="../static/home/photo/Method.js"></script>
 <script src="../static/home/photo/photo.js"></script>
+<script src="../static/home/photo/upload/zyFile.js"></script>
+<script src="../static/home/photo/upload/zyUpload.js"></script>
+<script src="../static/home/photo/upload/jq22.js"></script>

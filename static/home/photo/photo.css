@@ -9,7 +9,7 @@ body {
 }
 #box{
     width: 1140px;
-    height: 2000px;
+    /* height: 2000px; */
     margin: 0 auto;
 }
 /* 头部的样式 */
@@ -38,26 +38,54 @@ body {
     border-radius: 5px;
     margin-top: 22px;
 }
-#box .header #btnSea{
+#box .header #btnUpload{
     width: 40px;
     height: 38px;
     border: 1px solid #f0f1f2;
     border-radius: 10px;
     background: rgb(224, 85, 30);
 }
-#box .header #btnSea:hover{
+#box .header #btnUpload:hover{
     cursor: pointer;
     background: rgb(150, 224, 30);
+}
+/* 显示上传页面 */
+#box #coverGo #demo{
+    /* width: 600px;
+    height: 500px; */
+    position: absolute;
+    border: #ebebeb solid 1px;
+    left: 50%;
+    right: 50%;
+    background: #FBFBFB;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 9999;
+    margin-left: -256px;
+    margin-top: 140px;
+    display: none;
+}
+#box #coverGo .login-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    filter: alpha(opacity=30);
+    -moz-opacity: 0.3;
+    -khtml-opacity: 0.3;
+    opacity: 0.3;
+    display: none;
 }
 /* 主要内容 */
 #box .content{
     width: 1140px;
-    height: 1320px;
+    height: 777px;
 }
 /* 主要内容左边部分 */
 #box .content .con-left-duo{
     width: 850px;
-    height: 1320px;
+    height: 777px;
     display: inline-block;
 }
 #box .content .con-left{
@@ -82,6 +110,9 @@ body {
     -moz-border-radius:10px;
     position: relative;
 }
+#box .content .con-left .con-left-con #imgp:hover{
+    transform: scale(1.05,1.05);
+}
 #box .content .con-left .con-left-con .imgdesc{
     margin-top: -30px;
     position: absolute;
@@ -105,7 +136,7 @@ body {
 #box .content .con-right{
     display: inline-block;
     width: 285px;
-    height: 1320px;
+    height: 777px;
     float: right;  
 }
 
@@ -118,7 +149,7 @@ body {
 #box .content .con-right .con-right-li{
     margin-left: 20px;
     margin-top: 20px;
-    height: 425px;
+    height: 475px;
 }
 #box .content .con-right .con-right-li-li{
     float: left;

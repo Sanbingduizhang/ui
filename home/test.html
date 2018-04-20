@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" name="form" enctype="multipart/form-data">
+        <input type="file" name="photo" id="photo">
+    </form>
+    <!-- <img src="kkkkk.JPG" alt="" id="imghead"> -->
+    <button id="btn">提交</button>
+</body>
+</html>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    // var file =document.getElementById("#file");
+
+    // var imgUrl =window.URL.createObjectURL(file.files[0]);
+
+    // var img =document.getElementById('imghead');
+
+    // img.setAttribute('src',imgUrl); // 修改img标签src属性值
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            // console.log(1);return false;
+            var formData1 = new FormData($("#form")[0]);
+            // console.log(formData1);return false;
+            $.ajax({
+                type:"POST",
+                url:"http://laravelgo.com/home/photo/uploads",
+                data:formData1,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(111);
+                },
+                error:function(data){
+                    console.log(data);
+                }
+            })
+        })
+    })
+</script>
