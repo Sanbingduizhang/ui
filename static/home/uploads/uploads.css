@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    text-decoration: none;
+}
+body {
+    background-color: #f0f1f2;
+}
+#box{
+    width: 1140px;
+    /* height: 2000px; */
+    background-color: antiquewhite;
+    margin: 0 auto;
+}
+#box #header{
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+#box #content{
+    padding-left: 20px;
+    
+}
+#box #selectop{
+    float: left;
+}
+#box #uploadleft{
+    margin-top: 10px;
+}
+#box #createnew{
+    float: left;
+    cursor: pointer;
+    margin-left: 20px;
+    width: 100px;
+    height: 35px;
+    
+}
+#box #btn{
+    cursor: pointer;
+    margin-left: 20px;
+    width: 100px;
+    height: 35px;
+}

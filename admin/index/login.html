@@ -58,7 +58,7 @@
 		var u = $("input[name=username]");
 		var p = $("input[name=password]");
 		$("#submit").on('click',function(){
-			// window.location.href='../admin/admin.html';
+			
 			if(u.val() == '' || p.val() =='')
 			{
 				$("#ts").html("用户名或密码不能为空~");
@@ -72,23 +72,30 @@
 					is_show();
 					return false;
 				}
-				if(u.val() == 'admin' && p.val() == 'admin888'){
-					window.location.href='../admin/admin.html';
-				}
-				// $.ajax({
-				// 	type:"POST",
-				// 	url:"http://www.heijiang.top/home/article",
-				// 	data:{
-				// 		dat:$('#va').val(),
-				// 	},
-				// 	dataType:"json",
-				// 	success:function(data){
-				// 		console.log(data);
-				// 	},
-				// 	error:function (jqXHR){
-				// 		console.log(jqXHR);
-				// 	}
-				// });
+				window.location.href='../admin/admin.html';
+				// if((u.val().length >6 && u.val().length <12) || (p.val().length >6 && p.val().length <12)) {
+				// 	$.ajax({
+				// 		type:"POST",
+				// 		url:"http://www.heijiang.top/home/article",
+				// 		data:{
+				// 			uname:u.val(),
+				// 			pwd:p.val(),
+				// 		},
+				// 		dataType:"json",
+				// 		success:function(data){
+				// 			console.log(data);
+				// 		},
+				// 		error:function (jqXHR){
+				// 			console.log(jqXHR);
+				// 		}
+				// 	});
+				// } else {
+				// 	$("#ts").html("用户名或密码错误~");
+				// 	is_show();
+				// 	return false;
+				// }
+				
+				
 			}
 		});
 		window.onload = function()
