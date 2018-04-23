@@ -50,16 +50,16 @@ $(function (){
     //点击文章跳转到详情页
     $('.con-left').on('click','.con-left-con-a',function(){
         var articleid = $(this).attr('articleid');
-        // window.location.href='http://blog.heijiang.top/../home/ardetail.html?articleid='+articleid;
-        window.location.href='http://public.com/ui/home/ardetail.html?articleid='+articleid;
+        window.location.href='http://blog.heijiang.top/../home/ardetail.html?articleid='+articleid;
+        // window.location.href='http://public.com/ui/home/ardetail.html?articleid='+articleid;
     });
     //点击标题跳转页面
     $('.header-left').on('click','.index-head-title',function(){
         var hrefid = $(this).attr('hrefid');
         if(6 === Number(hrefid)) {
-            window.location.href='http://public.com/ui/home/photos.html';
+            window.location.href='http://blog.heijiang.top/../home/photos.html';
         } else {
-            window.location.href='http://public.com/ui/home/article.html?id='+hrefid;
+            window.location.href='http://blog.heijiang.top/../home/article.html?id='+hrefid;
         }
     })
 });
