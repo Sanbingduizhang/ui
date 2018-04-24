@@ -1,41 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../static/home/uploads/uploads.css">
-    <title>图片上传</title>
-</head>
-<body>
-    <div id="box">
-        <div id="header">上传图片(现阶段仅支持单张上传)</div>
-        
-        <div id="content">
-            <div id="uploadright">
-                    <button id="createnew">创建新相册</button>
-                    <button id="btn">上传图片</button>
-            </div>
-            
-            <div id="uploadleft">
-                <form  enctype="multipart/form-data">
-                    <input type="file" name="photo" id="photo" onchange="getImgURL(this)">
-                </form>
-                <div>
-                    <div id="mark"></div>
-                    <div id="markbig" style="display: none;"></div>
-                </div>
-                
-            </div>
-            
-        </div>
-    </div>
-</body>
-</html>
-<script src="../static/jquery-1.12.4.js"></script>
-<script src="../static/home/uploads/uploads.js"></script>
-<script>
-    function getImgURL(node) { 
+function getImgURL(node) { 
     var imgURL = "";      
     try{     
         var file = null;  
@@ -103,5 +66,4 @@ function creatImg(imgRUL){   //根据指定URL创建一个Img对象
                 console.log(jqXHR);
             }
         });
-    })
-</script>
+    });

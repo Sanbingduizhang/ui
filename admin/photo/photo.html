@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../static/admin/photo/photo.css">
+    <link rel='shortcut icon' href='../../favicon.ico'>
+    <link rel="stylesheet" href="../../static/pagination.css">
+    <link rel="stylesheet" href="../../static/home/com.css">
+    <title>图片上传</title>
+</head>
+<body>
+    <!-- 弹出层000 -->
+    <div id="createPhoto" style="display: none;">
+        <div id="colorbg"></div>
+        <div class="editPhoto">
+            <div>
+                <p class="p1">相册名称</p>
+                <p class="p2">
+                    <input type="text" id="pname" style="width:222px;height:20px;border-radius: 5px;">
+                    <span style="margin-left: 10px;font-size: 12px;">大于3个且少于10个</span>
+                </p>
+                
+            </div>
+            <div>
+                <p class="p1">是否发布</p>
+                <p class="p2">
+                    <input type="radio" checked name="status" value="1">发布 
+                    <input type="radio" name="status" value="0">不发布
+                </p>
+                
+            </div>
+            <div>
+                <p class="p1">是否共享</p>
+                <p class="p2">
+                    <input type="radio" checked name="share" value="1">共享 
+                    <input type="radio" name="share" value="0">不共享
+                </p>
+                
+            </div>
+            <div>
+                <button id="btnPhoto">创建新相册</button>
+            </div>
+            
+        </div>
+    </div>
+    <div id="box">
+        <div id="header">上传图片(现阶段仅支持单张上传)</div>
+        
+        <div id="content">
+            <div id="uploadright">
+                    <button id="createnew">创建新相册</button>
+                    <button id="btn">上传图片</button>
+            </div>
+            
+            <div id="uploadleft">
+                <form  enctype="multipart/form-data">
+                    <input type="file" name="photo" id="photo" onchange="getImgURL(this)">
+                </form>
+                <div>
+                    <div id="mark"></div>
+                    <div id="markbig" style="display: none;"></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div id="photol">
+            <div id="photolist">
+                <!-- <li>
+                    <img src="../../public/home/index/img/weixin.jpg" alt="">
+                    <div class="imgdesc">
+                        <span>2018-04-24 13:50:00</span>
+                        <span>共100张</span>
+                    </div>
+                    
+                </li>
+                <li>
+                    <a href="#">相册1</a>
+                </li>
+                <li>
+                    <a href="#">相册1</a>
+                </li>
+                <li>
+                    <a href="#">相册1</a>
+                </li>
+                <li><a href="#">相册1</a></li>
+                <li><a href="#">相册1</a></li>
+                <li><a href="#">相册1</a></li>
+                <li><a href="#">相册1</a></li> -->
+            </div>
+            <div class="M-box1 m-style">
+
+            </div> 
+        </div>
+        <!-- 底部 -->
+        <div class='bottom'>
+                <div class='bannerd'>
+                    <div class='bannerdt'>
+                        <div class='banttt bant1'>
+                            <a href='javascript:void(0);'>
+                                <h1>
+                                    <img src='../../public/home/index/img/foot.png' />
+                                </h1>
+                            </a>
+                        </div>
+                        <div class='banttt bant2'>
+                            <div class='lianjie1'>
+                                <ul>
+                                    <li>
+                                        <a href='javascript:void(0);'>关于我们</a>|</li>
+                                    <li>
+                                        <a href='javascript:void(0);'>加入我们</a>|</li>
+                                    <li>
+                                        <a href='javascript:void(0);'>合作申请</a>|</li>
+                                    <li>
+                                        <a href='javascript:void(0);'>意见反馈</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class='shenhe'>
+                                <span>由本人亲制</span> 待审核
+                            </div>
+                        </div>
+                        <div class='banttt bant3'>
+                            <div class='guanzhu'>
+                                <div class='guanwo'>关注我们：</div>
+                                <img src='../../public/home/index/img/weixin.jpg' alt=''>
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class='bannerdb'>
+                        <div class='banndbt'>
+                            <div class='zzz'>友情链接：</div>
+                            <ul>
+                                <li>
+                                    <a href='javascript:void(0);'>伞兵小队</a>|
+                                </li>
+                                <li>
+                                    <a href='javascript:void(0);'>壮哉104</a>|
+                                </li>
+                                <li>
+                                    <a href='javascript:void(0);'>都会成为老男孩</a>|
+                                </li>
+                                <li>
+                                    <a href='javascript:void(0);'>D350</a>|
+                                </li>
+                                <li>
+                                    <a href='javascript:void(0);'>大邳</a>|
+                                </li>
+                                <li>
+                                    <a href='javascript:void(0);'>站长之家</a>
+                                </li>
+                                <li>
+                                    <a href='admin/index/login.html'>管理员</a>
+                                </li>
+            
+                            </ul>
+                        </div>
+                        <div class='banndbb'>
+                            Powered by Sanbing v1.0.0 &copy;2017 伞兵一队
+                        </div>
+                    </div>
+                </div>
+                <div id='clear'></div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>
+<script src="../../static/jquery-1.12.4.js"></script>
+<script src="../../static/admin/photo/Method.js"></script>
+<script src="../../static/admin/photo/photo.js"></script>
+<script>
+    $(function(){
+        //跳转到页面请求一次相册
+        $.ajax({
+            type:"GET",
+            url:"http://www.heijiang.top/admin/photo/index",
+            dataType:"json",
+            success:function(data){
+                var datas = data.data.data;
+                var str = '';
+                for(var i = 0;i < datas.length;i++){
+                    str += '<li>'+
+                                '<img src="'+datas[i].photo.img_path+'" alt="图片消失了" title="'+datas[i].photo.img_name+'" imgid="'+datas[i].id+'">'+
+                                '<div class="imgdesc">'+
+                                    '<span>'+datas[i].created_at+'</span>'+
+                                    '<span>共'+datas[i].photo_count+'张</span>'+
+                                '</div>'+  
+                            '</li>';
+                }
+                $("#photolist").html(str);
+            },
+            error:function (jqXHR){
+                console.log(jqXHR);
+            }
+        });
+        //点击创建新相册，跳出弹框
+        $("#createnew").click(function(){
+            $("#createPhoto").show();
+        });
+        //创建新相册
+        $("#btnPhoto").click(function(){
+            var status = $('input:radio[name="status"]:checked').val();
+            var share = $('input:radio[name="share"]:checked').val();
+            var pname = $('#pname').val();
+            if('' == pname){
+                alert('相册名称不为空');
+                return false;
+            }
+            if($.trim(pname).length < 3 || $.trim(pname).length > 10){
+                alert('相册名称大于3个且少于10个');
+                return false;
+            }
+            $.ajax({
+                type:"POST",
+                data:{
+                    status:status,
+                    share:share,
+                    pname:pname,
+                },
+                // url:"http://www.heijiang.top/admin/photo/pCreate",
+                url:"http://laravelgo.com/admin/photo/pCreate",
+                dataType:"json",
+                success:function(data){
+                    //如果成功，则重新刷新一下页面
+                    if(1 == data.code){
+                        alert('相册添加成功');
+                        $('#createPhoto').hide();
+                        $.ajax({
+                            type:"GET",
+                            url:"http://laravelgo.com/admin/photo/index",
+                            dataType:"json",
+                            success:function(data){
+                                console.log(data);
+                            },
+                            error:function (jqXHR){
+                                console.log(jqXHR);
+                            }
+                        });
+
+                    } else {
+                        alert('添加失败');
+                    }
+                
+                },
+                error:function (jqXHR){
+                    console.log(jqXHR);
+                }
+            });
+
+        });
+    });
+</script>

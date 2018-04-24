@@ -22,16 +22,12 @@ body {
     padding-left: 20px;
     
 }
-#box #selectop{
-    float: left;
-}
 #box #uploadleft{
     margin-top: 10px;
 }
 #box #createnew{
     float: left;
     cursor: pointer;
-    margin-left: 20px;
     width: 100px;
     height: 35px;
     
