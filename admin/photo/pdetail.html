@@ -12,7 +12,50 @@
 </head>
 <body>
     <div id="box">
-        <div id="header">上传图片(现阶段仅支持单张上传)</div>
+        <!-- 显示图片和评论等信息层 -->
+        <div id="showPhoto">
+            
+            <div class="bgcolor"></div>
+            <div class="basedown">
+                <div>
+                    <button id="closeBtn">关闭</button>
+                </div>
+                <!-- 图片相关 -->
+                <div class="likePhoto">
+                    <div class="likecount">点赞</div>
+                    <div class="basePhot">
+                        <img src="kkkkk.png" alt="">
+                    </div>
+                </div>
+                <!-- 评论相关 -->
+                <div class="baseCom">
+                    <div class="pucom">
+                        <p>发表评论</p>
+                        <p>
+                            <textarea name="" id="" cols="30" rows="8" 
+                            style="resize:none;"></textarea>
+                        </p>
+                        <button id="btnCom">发表评论</button>
+                    </div>
+                    <div class="showCom">
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <!--asasa-->
+        <div id="header"></div>
         
         <div id="content">
             <div id="uploadright">
@@ -119,7 +162,7 @@
                 </div>
                 <div id='clear'></div>
         </div>
-        
+        <div id="clear"></div>
     </div>
     
 </body>
@@ -148,10 +191,6 @@
                     }
                     str += '<li>'+
                                 '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'">'+
-                                '<div class="imgdesc">'+
-                                    '<span>'+datas[i].user.name+'</span>'+
-                                    '<span>共'+1+'评论</span>'+
-                                '</div>'+  
                             '</li>';
                 }
                 $("#photolist").html(str);
@@ -160,5 +199,13 @@
                 console.log(jqXHR);
             }
         });
+        //点击单个图片跳出弹出层
+        $("#photolist").on('click','#imgdetail',function(){
+            var imgid = $(this).attr('imgid');
+            $("#showPhoto").show();
+        });
+        $("#closeBtn").click(function(){
+            $("#showPhoto").hide();
+        })
     });
 </script>
