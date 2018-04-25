@@ -38,9 +38,12 @@ body {
 /* 相册列表 */
 #box #photol{
     width: 100%;
-    height: 555px;
+    height: 865px;
     margin-top: 20px;
     
+}
+#box #photol #photolist{
+    height: 828px;
 }
 #box #photol #photolist li{
     float: left;
@@ -145,9 +148,7 @@ body {
     display: inline-block;
     vertical-align: middle; 
 }
-#box #showPhoto .basedown .likePhoto .basePhot img{
-    /* width: 35%; */
-}
+
 #box #showPhoto .basedown .baseCom{
     float: right;
     margin-right: 20px;

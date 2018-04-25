@@ -1,3 +1,4 @@
+//相册渲染方法
 function photos(data){
     var datas = data.data.data;
     var str = '';
