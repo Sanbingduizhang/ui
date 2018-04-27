@@ -63,8 +63,9 @@
             </div>
             
             <div id="uploadleft">
-                <form  enctype="multipart/form-data">
+                <form  enctype="multipart/form-data" id="fileupload">
                     <input type="file" name="photo" id="photo" onchange="getImgURL(this)">
+                    <!-- <input type="reset" value="清除" id="reset"> -->
                 </form>
                 <div>
                     <div id="mark"></div>
@@ -169,43 +170,8 @@
 </html>
 <script src="../../static/jquery-1.12.4.js"></script>
 <script src="../../static/jquery.pagination.js"></script>
-<script src="../../static/admin/photo/Method.js"></script>
+<script src="../../static/admin/photo/pMethod.js"></script>
 <script src="../../static/admin/photo/pdetail.js"></script>
 <script>
-    $(function(){
-        //跳转到页面，获取相册中所有图片
-        var photoid = Number(window.location.href.split('?')[1].split('=')[1]);
-        $.ajax({
-            type:"GET",
-            url:"http://www.heijiang.top/admin/photo/show/"+photoid,
-            dataType:"json",
-            success:function(data){
-                var datas = data.data.data;
-                var str = '';
-                for(var i = 0;i < datas.length;i++){
-                    var path;
-                    if(datas.length != 0){
-                        path = datas[i].img_path;
-                    }else{
-                        path = 'add.png';
-                    }
-                    str += '<li>'+
-                                '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'">'+
-                            '</li>';
-                }
-                $("#photolist").html(str);
-            },
-            error:function (jqXHR){
-                console.log(jqXHR);
-            }
-        });
-        //点击单个图片跳出弹出层
-        $("#photolist").on('click','#imgdetail',function(){
-            var imgid = $(this).attr('imgid');
-            $("#showPhoto").show();
-        });
-        $("#closeBtn").click(function(){
-            $("#showPhoto").hide();
-        })
-    });
+    
 </script>
