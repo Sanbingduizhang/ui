@@ -1,65 +1,64 @@
-//内容左边的标签生成方法
-function su(data){
-    var article = data.data.data;
-    var cate_name = data.data.cate_name;
-    var len = article.length;
-    // 标签生成
+//获取所有相册
+function photos(data){
+    var datas = data.data.data;
     var str = '';
-    for (var i = 0; i < len; i++) {
-    str +=  '<div class="con-left-con">'+
-                '<a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">'+
-                    '<div class="con-left-top">'+
-                        '<span class="con-left-top-title">'+article[i].title.substring(0,20)+'...</span>'+
-                        '<span class="con-left-top-author">'+article[i].user_info.name+'&nbsp;&nbsp;&nbsp;&nbsp;'+article[i].updated_at+'</span>'+
-                    '</div>'+
-                    '<div class="con-left-mid">'+
-                        '<p class="con-left-mid-desc">'+article[i].desc.substring(0,200)+'...</p>'+
-                    '</div>'+
-                    '<div class="con-left-bot">'+
-                        '<span class="con-left-bot-cate">分类:'+cate_name+'</span>'+
-                        '<span class="con-left-bot-like">点赞('+article[i].like+')&nbsp;&nbsp;评论('+article[i].comment_count+')</span>'+
-                    '</div>'+
-                '</a>'+
+    for(var i = 0;i < datas.length;i++){
+        var ppath = datas[i].photo;
+        var path;
+        if(ppath.length != 0){
+            path = ppath[0].img_path;
+        }else{
+            path = 'add.png';
+        }
+        str += '<div class="con-left-con">'+
+                    '<a href="javascript:void(0);" class="con-left-con-a">'+
+                        '<img id="imgp" src="'+path+'" alt="这是谁" title="'+datas[i].pname+'" photoid="'+datas[i].id+'">'+
+                        '<div class="imgdesc">'+
+                            '<span>'+datas[i].created_at+'</span>'+
+                            // '<span>'+datas[i].created_at+'</span>'+
+                        '</div>'+
+                    '</a>'+
+                '</div>';
+    }
+    return str;
+}
+//单个相册所有图片列表
+function pdetail(data){
+    var datas = data.data.res.data;
+    var str = '';
+    for(var i = 0;i < datas.length;i++){
+        var path;
+        if(datas.length != 0){
+            path = datas[i].img_path;
+        }else{
+            path = 'add.png';
+        }
+        str += '<li>'+
+                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'">'+
+                '</li>';
+    }
+    return str;
+}
+//加载图片列表中head头部信息
+function headM(data){
+    var Mes = data.data;
+    var str = '';
+    // if(Mes.userimg.length != 0){
+    //     img_path = Mes.userimg;
+    // } else {
+    //     img_path = 'kkkkk.JPG';
+    // }
+    str += '<div class="myPhoto">'+
+                '--->>>'+Mes.photoname+
+            '</div>'+
+            '<div class="mess">'+
+                '<span>作者:'+Mes.username+'</span>'+
+                '<span>共'+Mes.res.total+'张</span>'+
+                '<span>创建于:'+Mes.phototime+'</span>'+
+            '</div>'+
+            '<div class="usermess">'+
+                '<span class="username">用户1</span>'+
+                '<span class="userhead">头像</span>'+
             '</div>';
-        };
-        return str;
-};
-//推荐
-function rec(data){
-    var rec = data.data.articleRec;
-    var rec_len = rec.length;
-    str = '';
-    for(var i = 0;i < rec_len;i++){
-        str += '<li class="con-right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" temid = "'+rec[i].id+'">'+rec[i].title.substring(0,12)+'...</a></li>';
-    }
     return str;
-}
-//热门
-function re(data){
-    var re = data.data.articleRe;
-    var re_len = re.length;
-    str = '';
-    for(var i = 0;i < re_len;i++){
-        str += '<li class="con-right-recon-li"><a href="javascript:void(0);" class="con-right-recon-a" mid = "'+re[i].id+'">'+re[i].title.substring(0,12)+'...</a></li>';
-    }
-    return str;
-}
-//分类
-function cates(data){
-    var cates = data.data.cates;
-    var cates_len = cates.length;
-    str = '';
-    for(var i = 0;i < cates_len;i++){
-        //古道人家属于图片查看，这里直接去掉
-        if(5 === Number(i)) {
-            str += '';
-        } else {
-            str += '<li class="con-right-li-li  con-right-cate"><a href="javascript:void(0);" class="con-right-a" catemid = "'+cates[i].id+'">'+cates[i].name+'</a></li>';
-        }   
-    }
-    return str;
-}
-
-function load(){
-    
 }

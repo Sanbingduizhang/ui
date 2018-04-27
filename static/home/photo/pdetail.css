@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    text-decoration: none;
+}
+body {
+    background-color: #f0f1f2;
+    /* position: relative; */
+}
+#box{
+    width: 1140px;
+    /* height: 2000px; */
+    background-color: antiquewhite;
+    margin: 0 auto;
+}
+#box #header{
+    height: 50px;
+    /* padding-top: 10px; */
+    /* padding-left: 20px; */
+    background-image: url('head.png');
+    /* float: left; */
+}
+#box #header .allxinxi{
+    line-height: 50px;
+}
+#box #header .allxinxi span{
+    margin-left: 10px;
+}
+#box #header .myPhoto{
+    float: left;
+    margin-left: 35px;
+    color: rgb(194, 107, 187);
+    font-size: 18px;
+}
+#box #header .mess{
+    float: left;
+    margin-left: 20px;
+    font-size: 14px;
+}
+#box #header .usermess{
+    float: right;
+    margin-right: 40px;
+}
+#box #header .usermess .userhead{
+    display: inline-block;
+    border: 1px solid burlywood;
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+}
+
+/* 相册列表 */
+#box #photol{
+    width: 100%;
+    height: 865px;
+    /* margin-top: 20px; */
+    
+}
+#box #photolist{
+    width: 100%;
+    height: 825px;
+}
+#box #photol #photolist li{
+    float: left;
+    width: 250px;
+    height: 250px;
+    margin-left: 25px;
+    margin-top: 20px;
+    /* background-color: blue; */
+}
+#box #photol #photolist img{
+    /* display: block; */
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgb(202, 200, 209);
+    /* position: relative; */
+}
+#box #photol #photolist li img:hover{
+    transform: scale(1.05,1.05);
+    cursor: pointer;
+}
+/* 创建相册弹出层 */
+#createPhoto #colorbg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    opacity: 0.3;
+}
+#createPhoto .editPhoto{
+    width: 512px;
+    height: 280px;
+    position: absolute;
+    border: #ebebeb solid 1px;
+    left: 50%;
+    right: 50%;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 9999;
+    margin-left: -256px;
+    margin-top: 140px;
+    /* display: none; */
+}
+#createPhoto .editPhoto div{
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+#createPhoto .editPhoto div .p2{
+    margin-top: 5px;
+}
+#createPhoto #btnPhoto{
+    width: 125px;
+    height: 40px;
+    cursor: pointer;
+    background-color: darkgrey;
+    font-size: 16px;
+}
+#createPhoto #btnPhoto:hover{
+    background-color: cornsilk;
+}
+
+
+/* 单个图片显示和对应的评论显示 */
+#box #showPhoto{
+    display: none;
+}
+#box #showPhoto .bgcolor{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    opacity: 0.3;
+    /* display: none; */
+}
+#box #showPhoto .basedown{
+    width: 1140px;
+    height: 1000px;
+    border: #ebebeb solid 1px;
+    margin: 0 auto;
+    position: absolute;
+    background: antiquewhite;
+    box-shadow: 0px 0px 20px #ddd;
+    z-index: 99; 
+    /* margin-top: 50px; */
+    /* display: none; */
+}
+#box #showPhoto .basedown .likePhoto{
+    float: left;
+    width: 800px;
+    height: 100%;
+    margin-top: 20px;
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    /* background-color: #ffffff; */
+    /* z-index: 999; */
+}
+#box #showPhoto .basedown .likePhoto .basePhot{
+    display: inline-block;
+    vertical-align: middle; 
+}
+#box #showPhoto .basedown .likePhoto .basePhot img{
+    /* width: 35%; */
+}
+#box #showPhoto .basedown .baseCom{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#closeBtn{
+    /* float: right; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#clear {
+    clear: both;
+}

@@ -4,68 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static/admin/photo/photo.css">
-    <link rel='shortcut icon' href='../../favicon.ico'>
-    <link rel="stylesheet" href="../../static/pagination.css">
-    <link rel="stylesheet" href="../../static/home/com.css">
-    <title>图片上传</title>
+    <link rel="stylesheet" href="../static/home/photo/pdetail.css">
+    <link rel='shortcut icon' href='../favicon.ico'>
+    <link rel="stylesheet" href="../static/pagination.css">
+    <link rel="stylesheet" href="../static/home/com.css">
+    <title>图片</title>
 </head>
 <body>
-    <!-- 弹出层000 -->
-    <div id="createPhoto" style="display: none;">
-        <div id="colorbg"></div>
-        <div class="editPhoto">
-            <span id="closeb">
-                关闭
-            </span>
-            <div>
-                <p class="p1">相册名称</p>
-                <p class="p2">
-                    <input type="text" id="pname" style="width:222px;height:20px;border-radius: 5px;">
-                    <span style="margin-left: 10px;font-size: 12px;">大于3个且少于10个</span>
-                </p>
-                
-            </div>
-            <div>
-                <p class="p1">是否发布</p>
-                <p class="p2">
-                    <input type="radio" checked name="status" value="1">发布 
-                    <input type="radio" name="status" value="0">不发布
-                </p>
-                
-            </div>
-            <div>
-                <p class="p1">是否共享</p>
-                <p class="p2">
-                    <input type="radio" checked name="share" value="1">共享 
-                    <input type="radio" name="share" value="0">不共享
-                </p>
-                
-            </div>
-            <div>
-                <button id="btnPhoto">创建新相册</button>
+    <div id="box">
+        <!-- 显示图片和评论等信息层 -->
+        <div id="showPhoto">
+            
+            <div class="bgcolor"></div>
+            <div class="basedown">
+                <div>
+                    <button id="closeBtn">关闭</button>
+                </div>
+                <!-- 图片相关 -->
+                <div class="likePhoto">
+                    <div class="likecount">点赞</div>
+                    <div class="basePhot">
+                        <img src="add.png" alt="">
+                    </div>
+                </div>
+                <!-- 评论相关 -->
+                <div class="baseCom">
+                    <div class="pucom">
+                        <p>发表评论</p>
+                        <p>
+                            <textarea name="" id="" cols="30" rows="8" 
+                            style="resize:none;"></textarea>
+                        </p>
+                        <button id="btnCom">发表评论</button>
+                    </div>
+                    <div class="showCom">
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                        <div class="showcom">
+                            <p>评论1</p>
+                            <p><a href="#">回复(11)</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <!--asasa-->
+        <div id="header">
+            <div class="allxinxi">
+                <!-- <div class="myPhoto">
+                    <<<>>>我的相册
+                </div>
+                <div class="mess">
+                    <span>作者：小茶</span>
+                    <span>共13张</span>
+                <span> 时间：2018-04-27</span>
+                </div>
+                <div class="usermess">
+                    <span class="username">用户1</span>
+                    <span class="userhead">头像</span>
+                </div> -->
             </div>
             
         </div>
-    </div>
-    <div id="box">
-        <div id="header">我的相册</div>
-        
-        <div id="content">
-            <div id="uploadright">
-                    <button id="createnew">创建新相册</button>
-            </div>            
-        </div>
+        <!-- 相册图片展示 -->
         <div id="photol">
             <div id="photolist">
                 <!-- <li>
                     <img src="../../public/home/index/img/weixin.jpg" alt="">
                     <div class="imgdesc">
-                        <span class="time">2018-04-24 13:50:00</span>
-                        <span class="count">共100张</span>
+                        <span>2018-04-24 13:50:00</span>
+                        <span>共100张</span>
                     </div>
                     
-                </li>-->
+                </li>
+                -->
             </div>
             <div class="M-box1 m-style">
 
@@ -78,7 +96,7 @@
                         <div class='banttt bant1'>
                             <a href='javascript:void(0);'>
                                 <h1>
-                                    <img src='../../public/home/index/img/foot.png' />
+                                    <img src='../public/home/index/img/foot.png' />
                                 </h1>
                             </a>
                         </div>
@@ -103,7 +121,7 @@
                         <div class='banttt bant3'>
                             <div class='guanzhu'>
                                 <div class='guanwo'>关注我们：</div>
-                                <img src='../../public/home/index/img/weixin.jpg' alt=''>
+                                <img src='../public/home/index/img/weixin.jpg' alt=''>
             
                             </div>
                         </div>
@@ -143,12 +161,15 @@
                 </div>
                 <div id='clear'></div>
         </div>
-        
+        <div id="clear"></div>
     </div>
     
 </body>
 </html>
-<script src="../../static/jquery-1.12.4.js"></script>
-<script src="../../static/jquery.pagination.js"></script>
-<script src="../../static/admin/photo/Method.js"></script>
-<script src="../../static/admin/photo/photo.js"></script>
+<script src="../static/jquery-1.12.4.js"></script>
+<script src="../static/jquery.pagination.js"></script>
+<script src="../static/home/photo/Method.js"></script>
+<script src="../static/home/photo/pdetail.js"></script>
+<script>
+    
+</script>

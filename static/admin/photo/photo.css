@@ -59,8 +59,8 @@ body {
     /* display: none; */
 }
 #box #photol #photolist li .imgdesc .count1{
-    float: right;
-    margin-right: -190px;
+    float: left;
+    margin-right: 20px;
 }
 #box #photol #photolist img{
     /* display: block; */

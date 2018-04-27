@@ -84,21 +84,21 @@ body {
 }
 /* 主要内容左边部分 */
 #box .content .con-left-duo{
-    width: 850px;
+    width: 100%;
     height: 777px;
     display: inline-block;
 }
 #box .content .con-left{
-    width: 850px;
-    height: 1280px;
+    width: 100%;
+    height: 735px;
     display: inline-block;
 }
 #box .content .con-left .con-left-con{
     float: left;
-    width: 30%;
+    width: 22%;
     height: 230px;
     margin-top: 10px;
-    margin-right: 20px;
+    margin-left: 25px;
     box-shadow: 1px 1px 1px #999;
     border-radius: 10px;
 }

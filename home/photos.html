@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../static/pagination.css">
     <link rel="stylesheet" href="../static/home/photo/photo.css">
     <link rel="stylesheet" href="../static/home/com.css">
-    <link rel="stylesheet" href="../static/home/photo/upload/zyUpload.css">
     <title>图文详情</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
             <span class="sousuo">
                 <!-- <input type="text" name="" id="search"> -->
                 
-                <button id="btnUpload">新建</button>    
+                <!-- <button id="btnUpload">新建</button>     -->
             </span>
         </div>
         <div id='coverGo'>
@@ -32,58 +31,23 @@
                 <!-- 内容左边部分 -->
                 <div class="con-left-duo">
                     <div class="con-left">
-                        <div class="con-left-con">
-                                <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                    <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                    <div class="imgdesc">
-                                        <span>分类名称</span>
-                                        <span>2018-04-03 12:12:12</span>
-                                    </div>
-                                    
-                                </a>
-                            </div>
-                            <div class="con-left-con">
-                                    <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                        <img id="imgp" src="kkkkk.jpg" alt="这是谁" title="aaaa">
-                                    </a>
+                        <!-- <div class="con-left-con">
+                            <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
+                                <img id="imgp" src="add.png" alt="这是谁" >
+                                <div class="imgdesc">
+                                    <span>分类名称</span>
+                                    <span>2018-04-03 12:12:12</span>
                                 </div>
-                        <div class="con-left-con">
-                                <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                        <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                </a>
-                            </div>
-                            <div class="con-left-con">
-                                    <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                    </a>
-                                </div>
-                                <div class="con-left-con">
-                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                        </a>
-                                    </div>
-                                    <div class="con-left-con">
-                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                        </a>
-                                    </div>
-                                    <div class="con-left-con">
-                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                        </a>
-                                    </div>
-                                    <div class="con-left-con">
-                                        <a href="javascript:void(0);" class="con-left-con-a" articleid="'+article[i].id+'">
-                                            <img id="imgp" src="kkkkk.jpg" alt="这是谁" >
-                                        </a>
-                                    </div>
+                                
+                            </a>
+                        </div>  -->
                     </div>
                     <div class="M-box1 m-style">
     
                     </div>  
                 </div>
                 <!-- 内容右边部分 -->
-                <div class="con-right">
+                <!-- <div class="con-right">
                     <div  class="con-right-ref">
                         <div class="con-right-title">分类>>></div>
                         <div class="con-right-li">
@@ -91,7 +55,7 @@
                             </ul>
                         </div>
                     </div>  
-                </div>
+                </div> -->
         </div>
             <!-- 底部 -->
         <div class='bottom'>
@@ -174,6 +138,50 @@
 <script src="../static/jquery.pagination.js"></script>
 <script src="../static/home/photo/Method.js"></script>
 <script src="../static/home/photo/photo.js"></script>
-<script src="../static/home/photo/upload/zyFile.js"></script>
-<script src="../static/home/photo/upload/zyUpload.js"></script>
-<script src="../static/home/photo/upload/jq22.js"></script>
+<script>
+    $(function(){
+        $.ajax({
+            type:"GET",
+            url:"http://www.heijiang.top/home/photo/index",
+            dataType:"json",
+            success:function(data){
+                //获取页码相关内容
+                var yema = data.data;
+                //调用相关方法
+                var str1 = photos(data);
+                $(".con-left").html(str1);
+                //分页
+                $('.M-box1').pagination({
+                    totalData: yema.total,
+                    showData: yema.per_page,
+                    current:yema.current_page,
+                    coping: true,
+                    callback:function(api){
+                        $.ajax({
+                            type:"GET",
+                            url:"http://www.heijiang.top/home/photo/index?page="+api.getCurrent(),
+                            dataType:"json",
+                            success:function(data){
+                                //调用相关方法
+                                var strs = photos(data)
+                                $("#con-left").html(strs);
+                            },
+                            error:function (jqXHR){
+                                console.log(jqXHR);
+                            }
+            
+                        });
+                    },
+                });
+            },
+            error:function(jqXHR){
+                console.log(jqXHR);
+            }
+        });
+        //点击相册进行跳转，获取单个相册中所有图片
+        $(".con-left").on('click','#imgp',function(){
+            var photoid = $(this).attr('photoid');
+            window.location.href='pdetail.html?photoid='+photoid;
+        });
+    });
+</script>
