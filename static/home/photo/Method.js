@@ -29,12 +29,14 @@ function pdetail(data){
     for(var i = 0;i < datas.length;i++){
         var path;
         if(datas.length != 0){
-            path = datas[i].img_path;
+            path = datas[i].img_thumb;
+            origin_path = datas[i].img_path;
         }else{
             path = 'add.png';
+            origin_path = 'add.png';
         }
         str += '<li>'+
-                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'">'+
+                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'" img_path="'+ origin_path+'">'+
                 '</li>';
     }
     return str;
