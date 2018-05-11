@@ -139,8 +139,8 @@ body {
     /* display: none; */
 }
 #box #showPhoto .basedown{
-    width: 1140px;
-    height: 1000px;
+    width: 1138px;
+    height: 922px;
     border: #ebebeb solid 1px;
     margin: 0 auto;
     position: absolute;
@@ -163,10 +163,13 @@ body {
 #box #showPhoto .basedown .likePhoto .basePhot{
     display: inline-block;
     vertical-align: middle; 
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    line-height: 800px;
+    /* background-color: aqua; */
 }
-#box #showPhoto .basedown .likePhoto .basePhot img{
-    /* width: 35%; */
-}
+
 #box #showPhoto .basedown .baseCom{
     float: right;
     margin-right: 20px;
@@ -179,6 +182,67 @@ body {
     border-radius: 50%;
     cursor: pointer;
 }
+/* 评论相关 */
+#box .baseCom .pucom p:first-child{
+    margin-bottom: 10px;
+}
+#box #btnCom{
+    width: 80px;
+    height: 35px;
+    border-radius: 50%;
+    /* color: antiquewhite; */
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+#box #btnCom:hover{
+    background-color:#198CDE;
+}
+/* 显示评论 */
+#box .showCom{
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+    height: 600px;
+    /* border: 1px solid red; */
+    box-shadow: 1px 1px 1px;
+    background-color: #ffffff;
+    overflow:auto;
+}
+#box .showCom div{
+    margin:5px 5px;
+    width: 229px;
+    /* background-color: #ffffff; */
+    /* box-shadow: 1px 1px 1px; */
+}
+#box .showCom div p{
+    word-break:break-all;
+}
+#box .showCom div p:last-child a{
+    margin-right: 20px;
+    color:#A8A8A8; 
+}
+#box .showCom div p:last-child a:hover{
+    color: #3C3F41;
+    font-weight: 700;
+}
+#box .showCom div p:last-child a span{
+    color: #3C3F41;
+}
+#box .showCom .showMore{
+    /* font-size: 20px; */
+    height: 30px;
+    width: 113px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid grey;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+#box .showCom .showMore:hover{
+    background-color: #eee;
+}
+
 
 #clear {
     clear: both;

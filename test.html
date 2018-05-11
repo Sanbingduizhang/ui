@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    aasdasd
+</body>
+</html>
+<script src="static/jquery-1.12.4.js"></script>
+<script>
+    $.ajax({
+        type:'GET',
+        data:{
+            goods_sn:'LT5000378998317Q',
+        },
+        url:"http://test.fengzhai.wang/C/api_goods.php?act=get_goods_sn",
+        dataType:"json",
+        success(data){
+            console.log(data);
+        },
+        error(jqH){
+            console.log(11);
+        }
+    })
+</script>

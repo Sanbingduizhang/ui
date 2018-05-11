@@ -41,6 +41,28 @@ function pdetail(data){
     }
     return str;
 }
+
+//图片转换方法
+function imgTurn(quanjuData,imgid){
+    var imgDetail_path = quanjuData.data.res.data[imgid-1].img_path;
+    //获取图片的宽高
+    var imgkg = new Image();
+    imgkg.src = imgDetail_path;
+    //更具图片宽高进行大小转换-----按照宽高800px来显示
+    if(imgkg.height < 800 && imgkg.width < 800){
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="">';
+    } else if(imgkg.height < 800 && imgkg.width > 800) {
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%">';
+    } else if(imgkg.height > 800 && imgkg.width > 800) {
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%" height="100%">';
+    } else if(imgkg.height > 800 && imgkg.width < 800) {
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" height="100%">';
+    } else {
+        var imgDetail = '<img src="kkkkk.JPG" alt="" height="100%">';
+    }
+    return imgDetail;
+}
+
 //加载图片列表中head头部信息
 function headM(data){
     var Mes = data.data;
