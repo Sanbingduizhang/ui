@@ -50,16 +50,25 @@ function imgTurn(quanjuData,imgid){
     imgkg.src = imgDetail_path;
     //更具图片宽高进行大小转换-----按照宽高800px来显示
     if(imgkg.height < 800 && imgkg.width < 800){
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="">';
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" imgid="'+imgid+'">';
     } else if(imgkg.height < 800 && imgkg.width > 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%">';
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%"  imgid="'+imgid+'">';
     } else if(imgkg.height > 800 && imgkg.width > 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%" height="100%">';
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%" height="100%"  imgid="'+imgid+'">';
     } else if(imgkg.height > 800 && imgkg.width < 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" height="100%">';
+        var imgDetail = '<img src="'+imgDetail_path+'" alt="" height="100%"  imgid="'+imgid+'">';
     } else {
-        var imgDetail = '<img src="kkkkk.JPG" alt="" height="100%">';
+        var imgDetail = '<img src="kkkkk.JPG" alt="" height="100%"  imgid="'+imgid+'">';
     }
+    return imgDetail;
+}
+//图片完整显示方法
+function imgYuan(quanjuData,imgid){
+    var imgDetail_path = quanjuData.data.res.data[imgid-1].img_path;
+    //获取图片的宽高
+    var imgkg = new Image();
+    imgkg.src = imgDetail_path;
+    var imgDetail = '<img src="'+imgDetail_path+'" alt="">';
     return imgDetail;
 }
 

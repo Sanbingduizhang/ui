@@ -128,6 +128,11 @@ body {
 #box #showPhoto{
     display: none;
 }
+/* 单个图片全页面展示 */
+#box #showPhoto .basedown .likePhoto .basePhot img{
+    cursor: pointer;
+
+}
 #box #showPhoto .bgcolor{
     width: 100%;
     height: 100%;
@@ -138,6 +143,24 @@ body {
     opacity: 0.3;
     /* display: none; */
 }
+/* #box #showPhoto .bgcolor2{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    opacity: 0.5;
+    display: none;
+    vertical-align: middle;
+    text-align: center;
+} */
+/* #box #showPhoto .bgimg{
+    margin: 50px auto;
+    z-index: 9999;
+    display: none;
+} */
 #box #showPhoto .basedown{
     width: 1138px;
     height: 922px;
