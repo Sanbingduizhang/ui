@@ -54,7 +54,7 @@ $(function(){
     $("#photolist").on('click','#imgdetail',function(){
         //跳出弹出层
         var imgid = $(this).attr('imgid');
-        console.log(imgid);
+        // console.log(imgid);
         $("#showPhoto").show();
         //调用图片转换方法
         var imgDetail= imgTurn(quanjuData,imgid);
@@ -98,6 +98,27 @@ $(function(){
         error:function (jqXHR){
             console.log(jqXHR);
         }
+    });
+    //发表评论
+    $("#btnCom").click(function(){
+        var content = $("#comcon").val();
+        if(0 > content.length){
+            alert("请输入评论内容");
+            return false;
+        }
+        var imgid = $(".basePhot>img").attr('imgid');
+        //发送请求
+        $.ajax({
+            type:"POST",
+            url:"http://www.heijiang.top/home/photo/show/"+photoid,
+            dataType:"json",
+            success:function(data){
+                
+            },
+            error:function (jqXHR){
+                console.log(jqXHR);
+            }
+        });
     });
 
 
