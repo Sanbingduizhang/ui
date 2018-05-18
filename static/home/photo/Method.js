@@ -36,32 +36,39 @@ function pdetail(data){
             origin_path = 'add.png';
         }
         str += '<li>'+
-                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'" img_path="'+ origin_path+'">'+
+                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'" img_path="'+ origin_path+'" cate="'+data.data.cate+'" photoid="'+datas[i].cate_id+'">'+
                 '</li>';
     }
     return str;
 }
 
 //图片转换方法
-function imgTurn(quanjuData,imgid){
-    var imgDetail_path = quanjuData.data.res.data[imgid-1].img_path;
+function imgTurn(img_path,imgid,cate){
+    // var imgDetail_path = quanjuData.data.res.data[imgid-1].img_path;
     //获取图片的宽高
     var imgkg = new Image();
-    imgkg.src = imgDetail_path;
+    imgkg.src = img_path;
     //更具图片宽高进行大小转换-----按照宽高800px来显示
     if(imgkg.height < 800 && imgkg.width < 800){
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" imgid="'+imgid+'">';
+        var imgDetail = '<img src="'+img_path+'" alt="" imgid="'+imgid+'" cate="'+cate+'">';
     } else if(imgkg.height < 800 && imgkg.width > 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%"  imgid="'+imgid+'">';
+        var imgDetail = '<img src="'+img_path+'" alt="" width="100%"  imgid="'+imgid+'" cate="'+cate+'">';
     } else if(imgkg.height > 800 && imgkg.width > 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" width="100%" height="100%"  imgid="'+imgid+'">';
+        var imgDetail = '<img src="'+img_path+'" alt="" width="100%" height="100%"  imgid="'+imgid+'" cate="'+cate+'">';
     } else if(imgkg.height > 800 && imgkg.width < 800) {
-        var imgDetail = '<img src="'+imgDetail_path+'" alt="" height="100%"  imgid="'+imgid+'">';
+        var imgDetail = '<img src="'+img_path+'" alt="" height="100%"  imgid="'+imgid+'" cate="'+cate+'">';
     } else {
-        var imgDetail = '<img src="kkkkk.JPG" alt="" height="100%"  imgid="'+imgid+'">';
+        var imgDetail = '<img src="kkkkk.JPG" alt="" height="100%"  imgid="'+imgid+'" cate="'+cate+'">';
     }
     return imgDetail;
 }
+//单个图片下评论显示
+function imgCom(data){
+    var datas = data.data.data;
+    
+}
+
+
 //图片完整显示方法
 function imgYuan(quanjuData,imgid){
     var imgDetail_path = quanjuData.data.res.data[imgid-1].img_path;
