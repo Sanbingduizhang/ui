@@ -64,8 +64,45 @@ function imgTurn(img_path,imgid,cate){
 }
 //单个图片下评论显示
 function imgCom(data){
+    var str = '';
     var datas = data.data.data;
+    //如果没有评论，则显示暂无评论
+    if(0 == datas.length){
+        return '<div class="noCom">暂无评论</div>';
+    }
+    //如果有评论，则开始页面渲染
+    for(var i = 0;i < datas.length;i++) {
+        str += '<div class="showcom" comment_id="'+datas[i].id+'" cate="'+datas[i].cate+'">'+
+                    '<p><a href="javascript:void(0);">'+datas[i].user_info.name+'</a>回复:</p>'+
+                    '<p>'+datas[i].content+'</p>'+
+                    '<p>'+
+                    '<a href="javascript:void(0);" class="reply">回复(<span>'+datas[i].reply_count+'</span>)</a>'+
+                    '<a href="javascript:void(0);" class="likeGo">点赞(<span>'+datas[i].likecount+'</span>)</a>'+
+                    '<a href="javascript:void(0);" class="delCom">删除</a>'+
+                    '</p>'+
+                '</div>';
+    }
+    str += '<div class="showMore">更多评论>>></div>';    
+    return str; 
+}
+//单个图片下评论显示所有
+function imgComMore(data){
+    var str = '';
+    var datas = data.data;
+    //如果有评论，则开始页面渲染
+    for(var i = 0;i < datas.length;i++) {
+        str += '<div class="showcom" comment_id="'+datas[i].id+'" cate="'+datas[i].cate+'">'+
+                    '<p><a href="javascript:void(0);">'+datas[i].user_info.name+'</a>回复:</p>'+
+                    '<p>'+datas[i].content+'</p>'+
+                    '<p>'+
+                        '<a href="javascript:void(0);" class="reply">回复(<span>'+datas[i].reply_count+'</span>)</a>'+
+                        '<a href="javascript:void(0);" class="likeGo">点赞(<span>'+datas[i].likecount+'</span>)</a>'+
+                        '<a href="javascript:void(0);" class="delCom">删除</a>'+
+                    '</p>'+
+                '</div>';
+    }
     
+    return str; 
 }
 
 
