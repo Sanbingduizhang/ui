@@ -30,6 +30,14 @@ body {
     height: 35px;
     border-radius: 2px;  
 }
+#box #delPhoto{
+    /* float: left; */
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    border-radius: 2px;
+    margin-left: 20px;  
+}
 /* 相册列表 */
 #box #photol{
     width: 100%;
@@ -72,6 +80,13 @@ body {
 #box #photol #photolist li img:hover{
     transform: scale(1.05,1.05);
     cursor: pointer;
+}
+/* 图片复选框的设置 */
+#box #photol #photolist li #check{
+    position: absolute;
+    z-index: 999;
+    display: none;
+    zoom: 200%;
 }
 /* 创建相册弹出层 */
 #createPhoto #colorbg{

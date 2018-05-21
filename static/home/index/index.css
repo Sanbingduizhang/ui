@@ -49,6 +49,12 @@ body {
 #box .header .header-left li:nth-child(1) {
     margin-left: 0;
 }
+#box .header .header-left li:last-child{
+    background-color: gainsboro;
+}
+#box .header .header-left li:hover{
+    background-color: #f0f1f2;
+}
 /* 头部右边的登陆 */
 #box .header .header-right li {
     display: block;

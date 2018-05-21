@@ -1,44 +1,3 @@
-//图片上传预览函数方法
-function getImgURL(node) { 
-    var imgURL = "";      
-    try{     
-        var file = null;  
-        if(node.files && node.files[0] ){  
-            file = node.files[0];   
-        }else if(node.files && node.files.item(0)) {                                  
-            file = node.files.item(0);     
-        }     
-        //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
-        try{  
-            //Firefox7.0   
-            imgURL =  file.getAsDataURL();    
-            //alert("//Firefox7.0"+imgRUL);                           
-        }catch(e){  
-            //Firefox8.0以上                                
-            imgRUL = window.URL.createObjectURL(file);  
-            //alert("//Firefox8.0以上"+imgRUL);  
-        }  
-     }catch(e){      //这里不知道怎么处理了，如果是遨游的话会报这个异常                   
-        //支持html5的浏览器,比如高版本的firefox、chrome、ie10  
-        if (node.files && node.files[0]) {                            
-            var reader = new FileReader();   
-            reader.onload = function (e) {                                        
-                imgURL = e.target.result;    
-            };  
-            reader.readAsDataURL(node.files[0]);   
-        }    
-     }  
-    
-    //imgurl = imgURL;  
-    creatImg(imgRUL);  
-    return imgURL;  
-}  
-         
-function creatImg(imgRUL){   //根据指定URL创建一个Img对象  
-    var textHtml = "<img src='"+imgRUL+"'  width='150px' height='150px' id='imgshow' style='cursor: pointer;'/>";  
-    $("#mark").html(textHtml);  
-}
-
 //页面加载时候相关代码
 $(function(){
     //跳转到页面，获取相册中所有图片
@@ -110,4 +69,117 @@ $(function(){
             }
         });
     });
+
+    ////////////////////////////---------图片选择部分（）start-----------------//////////////////////////
+    //图片hover时显示input复选框。用来删除相册
+    $("#photolist").on('mouseenter','#imgdetail',function(){
+        $(this).prev().css("display","block");
+        // $("#check").css("display","block");
+    });
+    //如果被选中则显示input复选框，否则就隐藏
+    $("#photolist").on('mouseleave','li',function(){
+        var isChecked = $(this).find('input[type="checkbox"]').is(':checked');
+        isChecked ? $(this).children("#check").show() : $(this).children("#check").hide();
+        
+    });
+    //复选框点击事件
+    $("#photolist").on('click','#check',function(){
+        $(this).prop("checked",$(this).is(':checked'));
+        
+        var lis = $("#photolist").find('li');
+        var postArr = new Array();
+        var imgid = '';
+        var i = 0;
+        //获取被选中的图片
+        lis.each(function(index,elem){
+           if($(this).find('input[type="checkbox"]').is(':checked')) {
+                imgid = $(this).children('img').attr('imgid');
+                postArr[i] = imgid;
+                i++;        
+            }
+        });
+        if(lis.length == postArr.length) {
+            $(".quanXuan").prop("checked",true);
+        } else {
+            $(".quanXuan").prop("checked",false);
+        }
+    });
+    //全选按钮
+    $("#btnXuan").click(function(){
+        var ischecked = $(".quanXuan").is(':checked');
+        var lis = $("#photolist").find('li');
+        if(ischecked){
+            $(".quanXuan").prop("checked",false);
+            //将所有被选中的图片置为未被选择
+            lis.each(function(index,elem){
+                //提前获取是否被选中
+                var isChecked = $(this).find('input[type="checkbox"]').is(':checked');
+                if(isChecked) {
+                    $(this).find('input[type="checkbox"]').prop("checked",false);
+                    //这里依然时之前判断是否被选中，因此要重新判断
+                    isChecked ? $(this).children("#check").hide() : $(this).children("#check").show();
+                }
+            });
+        } else {
+            $(".quanXuan").prop("checked",true);
+            //将所有未被选中的图片置为被选择
+            lis.each(function(index,elem){
+                //提前判断是否被选中
+                var isChecked = $(this).find('input[type="checkbox"]').is(':checked');
+                if(!isChecked) {
+                    $(this).find('input[type="checkbox"]').prop("checked",true);
+                    //重新判断
+                    !isChecked ? $(this).children("#check").show() : $(this).children("#check").hide();
+                }
+            });
+        }
+    });
+    //删除图片
+    $("#btndel").click(function(){
+        // 获取数据
+        var photoid = $("#photolist").attr('photoid');
+        var cate = $("#photolist").attr('plcate');
+        var lis = $("#photolist").find('li');
+        var imgIdArr = new Array();
+        var imgid = '';
+        var i = 0;
+        //获取被选中的图片
+        lis.each(function(index,elem){
+           if($(this).find('input[type="checkbox"]').is(':checked')) {
+                    imgid = $(this).children('img').attr('imgid');
+                    imgIdArr[i] = imgid;
+                    i++;
+            }
+        });
+        // console.log(imgIdArr);return;
+        if (0 > imgIdArr.length || 0 == imgIdArr.length) {
+            alert("请选择要删除的图片!");
+            return;
+        }
+        if(!confirm("确定删除吗")) {
+            return;
+        }
+        // 删除图片
+        $.ajax({
+            type:"POST",
+            url:"http://www.heijiang.top/admin/photo/delPDetail",
+            dataType:"json",
+            data:{
+                cate:cate,
+                photoid:photoid,
+                imgIdArr:imgIdArr,
+            },
+            success:function(data){
+                if(1 == data.code) {
+                    ajaxX(photoid);
+                }
+            },
+            error:function (jqXHR){
+                console.log(jqXHR);
+            }
+        });
+        
+    });
+
+    ///////////////////////////---------end---------////////////////
 });
