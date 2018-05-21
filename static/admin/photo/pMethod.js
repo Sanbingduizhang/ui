@@ -73,7 +73,7 @@ function ajaxX(photoid){
             $("#photolist").attr('photoid',plpid);
             $("#photolist").html(str);
             //获取页码相关内容
-            var yema = data.data;
+            var yema = data.data.res;
             //分页
             $('.M-box1').pagination({
                 totalData: yema.total,
