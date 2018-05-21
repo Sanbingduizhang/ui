@@ -1,0 +1,3 @@
+function Immediate(){
+    $.DialogByZ.Close();
+ }

@@ -43,24 +43,26 @@ $(function(){
             success:function(data){
                 //如果成功，则重新刷新一下页面
                 if(1 == data.code){
-                    alert('相册添加成功');
-                    $('#createPhoto').hide();
-                    $.ajax({
-                        type:"GET",
-                        url:"http://www.heijiang.top/admin/photo/index",
-                        // url:"http://laravelgo.com/admin/photo/index",
-                        dataType:"json",
-                        success:function(data){
-                            //调用函数，请求成功刷新页面
-                            //调用相关方法
-                            var str = photos(data);
-                            $("#photolist").html(str);
-                        },
-                        error:function (jqXHR){
-                            console.log(jqXHR);
-                        }
-                    });
-
+                    $.DialogByZ.Confirm({Title: "", Content: "添加成功",FunL:confirmL,FunR:Immediate});
+                    function confirmL(){
+                        $.DialogByZ.Close();
+                        $('#createPhoto').hide();
+                        $.ajax({
+                            type:"GET",
+                            url:"http://www.heijiang.top/admin/photo/index",
+                            // url:"http://laravelgo.com/admin/photo/index",
+                            dataType:"json",
+                            success:function(data){
+                                //调用函数，请求成功刷新页面
+                                //调用相关方法
+                                var str = photos(data);
+                                $("#photolist").html(str);
+                            },
+                            error:function (jqXHR){
+                                console.log(jqXHR);
+                            }
+                        });
+                    }
                 } else {
                     alert('添加失败');
                 }
@@ -81,7 +83,7 @@ $(function(){
         var photoid = $(this).attr('photoid');
         window.location.href='pdetail.html?photoid='+photoid;
     });
-
+    
     //删除相册
     $("#delPhoto").click(function(){
         // 获取数据
@@ -99,32 +101,31 @@ $(function(){
         });
         // console.log(imgIdArr);return;
         if (0 > pIdArr.length || 0 == pIdArr.length) {
-            alert("请选择要删除的相册");
+            // alert("请选择要删除的相册");
+            $.DialogByZ.Alert({Title: "提示", Content: "请选择要删除的相册",BtnL:"确定"});
             return;
         }
-        if(!confirm("确定删除吗")) {
-            return;
-        }
-        // console.log(pIdArr);return false;
-        // 删除图片
-        $.ajax({
-            type:"POST",
-            url:"http://www.heijiang.top/admin/photo/pdel",
-            dataType:"json",
-            data:{
-                pIdArr:pIdArr,
-                pLength:pIdArr.length,
-            },
-            success:function(data){
-                if(1 == data.code) {
-                    ajaxP();
+        $.DialogByZ.Confirm({Title: "删除提示", Content: "是否确定删除<br>将删除相册和对应的所有图片",FunL:confirmL,FunR:Immediate});
+        function confirmL(){
+            $.DialogByZ.Close();
+            $.ajax({
+                type:"POST",
+                url:"http://www.heijiang.top/admin/photo/pdel",
+                dataType:"json",
+                data:{
+                    pIdArr:pIdArr,
+                    pLength:pIdArr.length,
+                },
+                success:function(data){
+                    if(1 == data.code) {
+                        ajaxP();
+                    }
+                },
+                error:function (jqXHR){
+                    console.log(jqXHR);
                 }
-            },
-            error:function (jqXHR){
-                console.log(jqXHR);
-            }
-        });
-        
+            });
+        }
     });
     
 });
