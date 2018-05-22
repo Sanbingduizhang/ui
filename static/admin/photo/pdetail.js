@@ -176,6 +176,7 @@ $(function(){
                 success:function(data){
                     if(1 == data.code) {
                         ajaxX(photoid);
+                        $(".quanXuan").prop("checked",false);
                     }
                 },
                 error:function (jqXHR){

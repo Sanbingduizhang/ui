@@ -143,24 +143,13 @@ body {
     opacity: 0.3;
     /* display: none; */
 }
-/* #box #showPhoto .bgcolor2{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 999;
-    top: 0px;
-    left: 0px;
-    background: #000000;
-    opacity: 0.5;
-    display: none;
-    vertical-align: middle;
-    text-align: center;
-} */
-/* #box #showPhoto .bgimg{
-    margin: 50px auto;
+#box #showPhoto .bgimg{
+    position: absolute;
+    margin: 0 auto;
     z-index: 9999;
     display: none;
-} */
+}
+
 #box #showPhoto .basedown{
     width: 1138px;
     height: 922px;

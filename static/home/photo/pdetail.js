@@ -89,24 +89,41 @@ $(function(){
     //点击单个图片渲染整个html页面，进行全局渲染
     // var oneFlag = 1;
     // $(".basePhot").on('click','img',function(){
-    //     console.log(111);
+        
     //     var imgid = $(this).attr('imgid');
-    //     console.log(imgid);
+        
     //     //嗲用完成图片炸死你hi办法
     //     var imgDetail= imgYuan(quanjuData,imgid);
-    //     $(".bgcolor2").show();
+    //     $("#closeBtn").hide();
+    //     $(".likePhoto").hide();
+    //     $(".baseCom").hide();
     //     $(".bgimg").show();
     //     $(".bgimg").html(imgDetail);
     //     oneFlag = -1;
         
     // });
-    //完整图片图层展示关闭
-    // $(".bgcolor2").click(function(){
-    //     console.log(111222);
-    //     $(this).hide();
+    // 完整图片图层展示关闭
+    // $(".bgcolor").click(function(){
+    //     $("#closeBtn").show();
+    //     $(".likePhoto").show();
+    //     $(".baseCom").show();
     //     $(".bgimg").hide();
     //     oneFlag = 1;
-    // })
+    // });
+    // $(".bgimg").click(function(){
+    //     $("#closeBtn").show();
+    //     $(".likePhoto").show();
+    //     $(".baseCom").show();
+    //     $(".bgimg").hide();
+    //     oneFlag = 1;
+    // });
+    // $(".basedown").click(function(){
+    //     $("#closeBtn").show();
+    //     $(".likePhoto").show();
+    //     $(".baseCom").show();
+    //     $(".bgimg").hide();
+    //     oneFlag = 1;
+    // });
     //关闭图层
     $("#closeBtn").click(function(){
         $("#showPhoto").hide();

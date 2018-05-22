@@ -127,25 +127,6 @@ function photos(data){
     }
     return str;
 }
-//单个相册所有图片列表
-function pdetail(data){
-    var datas = data.data.res.data;
-    var str = '';
-    for(var i = 0;i < datas.length;i++){
-        var path;
-        if(datas.length != 0){
-            path = datas[i].img_thumb;
-            origin_path = datas[i].img_path;
-        }else{
-            path = 'add.png';
-            origin_path = 'add.png';
-        }
-        str += '<li>'+
-                    '<img id = "imgdetail" src="'+path+'" alt="图片消失了" title="'+datas[i].img_name+'" imgid="'+datas[i].id+'" img_path="'+ origin_path+'" cate="'+data.data.cate+'" photoid="'+datas[i].cate_id+'">'+
-                '</li>';
-    }
-    return str;
-}
 
 //图片转换方法
 function imgTurn(img_path,imgid,cate){
