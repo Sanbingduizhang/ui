@@ -78,7 +78,7 @@ function imgCom(data){
                     '<p>'+
                     '<a href="javascript:void(0);" class="reply">回复(<span>'+datas[i].reply_count+'</span>)</a>'+
                     '<a href="javascript:void(0);" class="likeGo">点赞(<span>'+datas[i].likecount+'</span>)</a>'+
-                    '<a href="javascript:void(0);" class="delCom">删除</a>'+
+                    // '<a href="javascript:void(0);" class="delCom">删除</a>'+  //      展示给用的页面暂不启用删除，留待后期增加用户登陆再进行更新
                     '</p>'+
                 '</div>';
     }

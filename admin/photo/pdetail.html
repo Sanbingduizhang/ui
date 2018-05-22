@@ -8,6 +8,7 @@
     <link rel='shortcut icon' href='../../favicon.ico'>
     <link rel="stylesheet" href="../../static/pagination.css">
     <link rel="stylesheet" href="../../static/home/com.css">
+    <link rel="stylesheet" href="../../static/css/zdialog.css">
     <title>图片上传</title>
 </head>
 <body>
@@ -23,6 +24,7 @@
                 <!-- 图片相关 -->
                 <div class="likePhoto">
                     <div class="likecount">点赞</div>
+                    <hr>
                     <div class="basePhot">
                         <img src="kkkkk.png" alt="">
                     </div>
@@ -32,7 +34,7 @@
                     <div class="pucom">
                         <p>发表评论</p>
                         <p>
-                            <textarea name="" id="" cols="30" rows="8" 
+                            <textarea name="" id="comcon" cols="30" rows="8" 
                             style="resize:none;"></textarea>
                         </p>
                         <button id="btnCom">发表评论</button>
@@ -61,10 +63,10 @@
             <div id="uploadright">
                     <button id="btn">上传图片</button>
                     <button id="btndel">删除图片</button>
-                    <div>
-                        <input type="checkbox" class="quanXuan">
-                        <button id="btnXuan">全选</button>
+                    <div class="quanXuan" >
+                        <input type="checkbox" class="quanXuan" id="btnXuan">全选
                     </div>
+                    
             </div>
             
             <div id="uploadleft">
@@ -174,9 +176,11 @@
 </body>
 </html>
 <script src="../../static/jquery-1.12.4.js"></script>
+<script src="../../static/com.js"></script>
 <script src="../../static/jquery.pagination.js"></script>
 <script src="../../static/admin/photo/pMethod.js"></script>
 <script src="../../static/admin/photo/pdetail.js"></script>
+<script src="../../static/js/zdialog.js"></script>
 <script>
     
 </script>

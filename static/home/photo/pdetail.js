@@ -133,6 +133,7 @@ $(function(){
             dataType:"json",
             success:function(data){
                 $("#comcon").val('');
+                $.DialogByZ.Alert({Title: "", Content: "添加成功",BtnL:"确定"});
                 //重新渲染页面
                 $.ajax({
                     type:"GET",
@@ -147,7 +148,7 @@ $(function(){
                     error:function (jqXHR){
                         console.log(jqXHR);
                     }
-                });
+                }); 
             },
             error:function (jqXHR){
                 console.log(jqXHR);
@@ -185,23 +186,23 @@ $(function(){
             success:function(data){
                 //删除成功，则显示删除成功
                 if(1 == data.code){
-                    alert("删除成功");
+                    $.DialogByZ.Alert({Title: "提示", Content: "删除成功",BtnL:"确定"});
+                    //评论显示
+                    $.ajax({
+                        type:"GET",
+                        url:"http://www.heijiang.top/home/comment/imgComment?photoid="+photoidDel+"&imgid="+imgidDel+"&cate="+cate,
+                        dataType:"json",
+                        success:function(data){
+                            //加载评论方法，渲染评论页面
+                            var str = imgCom(data);
+                            $(".showCom").html(str);
+                            
+                        },
+                        error:function (jqXHR){
+                            console.log(jqXHR);
+                        }
+                    }); 
                 }
-                //评论显示
-                $.ajax({
-                    type:"GET",
-                    url:"http://www.heijiang.top/home/comment/imgComment?photoid="+photoidDel+"&imgid="+imgidDel+"&cate="+cate,
-                    dataType:"json",
-                    success:function(data){
-                        //加载评论方法，渲染评论页面
-                        var str = imgCom(data);
-                        $(".showCom").html(str);
-                        
-                    },
-                    error:function (jqXHR){
-                        console.log(jqXHR);
-                    }
-                });
             },
             error:function (jqXHR){
                 alert(jqXHR.message);
