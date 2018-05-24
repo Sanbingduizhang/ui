@@ -208,7 +208,7 @@ $(function(){
 
         $("#showPhoto").show();
         //调用图片转换方法
-        var imgDetail= imgTurn(img_path,imgid,cate);
+        var imgDetail= imgTurnA(img_path,imgid,cate);
         //进行图片渲染
         $(".basePhot").html(imgDetail);
 /////////////--------------------点击单个图片之后的评论----------////////////////
