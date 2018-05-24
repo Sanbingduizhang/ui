@@ -50,7 +50,11 @@ function imgTurn(img_path,imgid,cate){
     imgkg.src = img_path;
     //更具图片宽高进行大小转换-----按照宽高800px来显示
     if(imgkg.height < 800 && imgkg.width < 800){
-        var imgDetail = '<img src="'+img_path+'" alt="" imgid="'+imgid+'" cate="'+cate+'">';
+        if(imgkg.height == 0 || imgkg.width == 0) {
+            var imgDetail = '<img src="'+img_path+'" alt="" width="100%" height="100%"  imgid="'+imgid+'" cate="'+cate+'">';
+        } else {
+            var imgDetail = '<img src="'+img_path+'" alt="" imgid="'+imgid+'" cate="'+cate+'">';
+        } 
     } else if(imgkg.height < 800 && imgkg.width > 800) {
         var imgDetail = '<img src="'+img_path+'" alt="" width="100%"  imgid="'+imgid+'" cate="'+cate+'">';
     } else if(imgkg.height > 800 && imgkg.width > 800) {
