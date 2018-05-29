@@ -21,7 +21,7 @@
             </div>
             <div class='header-right'>
                 <ul>
-                    <li>
+                    <li class="li1">
                         <a id='linkZhu' href='javascript:void(0);'>注册</a>
                     </li>
                     <li>
@@ -45,11 +45,11 @@
                         <div class='login-input-content'>
                             <div class='login-input'>
                                 <label>用户名：</label>
-                                <input type='text' placeholder='请输入用户名' name='username' id='username' class='list-input'>
+                                <input type='text' onkeyup="this.value=this.value.replace(/[^\a-\z\A-\Z0-9]/g,'');" placeholder='请输入用户名' name='username' id='username' class='list-input'>
                             </div>
                             <div class='login-input'>
                                 <label>登录密码：</label>
-                                <input type='password' placeholder='请输入登录密码' name='password' id='password' class='list-input'>
+                                <input type='password' onkeyup="this.value=this.value.replace(/[^\a-\z\A-\Z0-9]/g,'');" placeholder='请输入登录密码' name='password' id='password' class='list-input'>
                             </div>
                         </div>
                         <div id='loginBtn' class='login-button'>
@@ -150,6 +150,8 @@
 </body>
 </html>
 <script src="static/jquery-1.12.4.js"></script>
+<script src="static/jquery.cookie.js"></script>
+<script src="static/com.js"></script>
 <script src="static/jquery.pagination.js"></script>
 <script src="static/home/index/Method.js"></script>
 <script src="static/home/index/index.js"></script>

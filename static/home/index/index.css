@@ -56,6 +56,9 @@ body {
     background-color: #f0f1f2;
 }
 /* 头部右边的登陆 */
+#box .header .header-right{
+    float: right;
+}
 #box .header .header-right li {
     display: block;
     height: 40px;
