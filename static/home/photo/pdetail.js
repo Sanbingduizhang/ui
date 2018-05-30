@@ -132,6 +132,10 @@ $(function(){
     //发表评论
     $("#btnCom").click(function(){
         var content = $("#comcon").val();
+        if(!tokenGet()){
+            alert("请先登陆");
+            return false;
+        }
         if(0 == content.trim().length){
             alert("请输入评论内容");
             return false;
@@ -145,6 +149,7 @@ $(function(){
                 id:imgid,
                 content:content,
                 cate:cate,
+                token:tokenGet(),
             },
             url:"http://www.heijiang.top/home/comment/comAdd",
             dataType:"json",

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登陆注册页面</title>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <p>用户登陆</p>
+            <p>
+                <span>用户名</span>
+                <input type="text" id="username1">
+            </p>
+            <p>
+                <span>密码</span>
+                <input type="text" id="password1">
+            </p>
+            <p>
+                <button id="login-button-submit1">登陆</button>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="static/jquery-1.12.4.js"></script>
+<script src="static/jquery.cookie.js"></script>
+<script src="static/com.js"></script>
+<script>
+    $("#login-button-submit1").click(function(){
+        var username = $("#username1").val();
+        var password = $("#password1").val();
+        if(username.length < 3 || username.length > 16){
+            alert("用户名需大于三位且小于16位");
+            return false;
+        }
+        if(password.length < 3 || password.length > 16){
+            alert("密码需大于三位且小于16位");
+            return false;
+        }
+        $.ajax({
+            type:"POST",
+            url:"http://www.heijiang.top/home/login",
+            dataType:"json",
+            data:{
+                username:username,
+                password:password,
+            },
+            success:function(data){
+                tokenSet(data);
+                // window.close();
+                // var token = $.session.get('token');
+                // console.log(token);
+            },
+            error:function (jqXHR){
+                console.log(jqXHR);
+            }
+
+        });
+    });
+</script>

@@ -27,7 +27,7 @@ function tokenGet(){
     // var token = localStorage.getItem('token');
     var token = $.cookie('token');
     if(token){
-        return '?token='+token;
+        return token;
     } else {
         return '';
     }
@@ -49,8 +49,6 @@ function tokenSet(data){
 }
 
 $(function(){
-    var aa = tokenGet();
-    console.log(aa);
     
     $("#login-button-submit").click(function(){
         var username = $("#username").val();
@@ -82,7 +80,5 @@ $(function(){
             }
 
         });
-        console.log(username);
-        console.log(password);
     });
 });
