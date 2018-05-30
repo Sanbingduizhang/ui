@@ -36,6 +36,7 @@ $(function(){
                 status:status,
                 share:share,
                 pname:pname,
+                token:tokenGet(),
             },
             url:"http://www.heijiang.top/admin/photo/pCreate",
             // url:"http://laravelgo.com/admin/photo/pCreate",
@@ -52,6 +53,9 @@ $(function(){
                             url:"http://www.heijiang.top/admin/photo/index",
                             // url:"http://laravelgo.com/admin/photo/index",
                             dataType:"json",
+                            data:{
+                                token:tokenGet(),
+                            },
                             success:function(data){
                                 //调用函数，请求成功刷新页面
                                 //调用相关方法
@@ -115,6 +119,7 @@ $(function(){
                 data:{
                     pIdArr:pIdArr,
                     pLength:pIdArr.length,
+                    token:tokenGet(),
                 },
                 success:function(data){
                     if(1 == data.code) {

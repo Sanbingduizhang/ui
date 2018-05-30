@@ -40,10 +40,17 @@ $(function(){
             $.DialogByZ.Alert({Title: "", Content: "请选择上传的图片",FunL:"确定"});
             return false;
         }
+        if(tokenGet()){
+            var strArr = tokenGet().split("+");
+            var tokenG = '?token='+strArr[0]+'%2B'+strArr[1];
+        } else {
+            var tokenG = '';
+        }
+        // console.log(tokenG);
         //上传图片发送接口
         $.ajax({
             type:"POST",
-            url:"http://www.heijiang.top/admin/photo/uploadImg/"+photoid,
+            url:"http://www.heijiang.top/admin/photo/uploadImg/"+photoid+tokenG,
             data:file,
             // dataType:"json",
             // cache: false,    
@@ -172,6 +179,7 @@ $(function(){
                     cate:cate,
                     photoid:photoid,
                     imgIdArr:imgIdArr,
+                    token:tokenGet(),
                 },
                 success:function(data){
                     if(1 == data.code) {
@@ -217,6 +225,9 @@ $(function(){
             type:"GET",
             url:"http://www.heijiang.top/home/comment/imgComment?photoid="+photoid+"&imgid="+imgid+"&cate="+cate,
             dataType:"json",
+            data:{
+                token:tokenGet(),
+            },
             success:function(data){
                 //加载评论方法，渲染评论页面
                 var str = imgCom(data);
@@ -270,6 +281,7 @@ $(function(){
                 id:imgid,
                 content:content,
                 cate:cate,
+                token:tokenGet(),
             },
             url:"http://www.heijiang.top/home/comment/comAdd",
             dataType:"json",
@@ -281,6 +293,9 @@ $(function(){
                     type:"GET",
                     url:"http://www.heijiang.top/home/comment/imgComment?photoid="+photoid+"&imgid="+imgid+"&cate="+cate,
                     dataType:"json",
+                    data:{
+                        token:tokenGet(),
+                    },
                     success:function(data){
                         //加载评论方法，渲染评论页面
                         var str = imgCom(data);
@@ -306,6 +321,9 @@ $(function(){
             type:"GET",
             url:"http://www.heijiang.top/home/comment/imgComment?more=true&photoid="+photoid+"&imgid="+imgid+"&cate="+cate,
             dataType:"json",
+            data:{
+                token:tokenGet(),
+            },
             success:function(data){
                 //加载评论方法，渲染评论页面
                 var str = imgComMore(data);
@@ -324,6 +342,9 @@ $(function(){
             type:"GET",
             url:"http://www.heijiang.top/home/comment/comDel/id/"+id+"/cate/"+cate,
             dataType:"json",
+            data:{
+                token:tokenGet(),
+            },
             success:function(data){
                 //删除成功，则显示删除成功
                 if(1 == data.code){
@@ -333,6 +354,9 @@ $(function(){
                         type:"GET",
                         url:"http://www.heijiang.top/home/comment/imgComment?photoid="+photoidDel+"&imgid="+imgidDel+"&cate="+cate,
                         dataType:"json",
+                        data:{
+                            token:tokenGet(),
+                        },
                         success:function(data){
                             //加载评论方法，渲染评论页面
                             var str = imgCom(data);

@@ -27,6 +27,9 @@ function ajaxP(){
         type:"GET",
         url:"http://www.heijiang.top/admin/photo/index",
         dataType:"json",
+        data:{
+            token:tokenGet(),
+        },
         success:function(data){
             //获取页码相关内容
             var yema = data.data;

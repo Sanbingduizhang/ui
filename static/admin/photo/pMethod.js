@@ -65,6 +65,9 @@ function ajaxX(photoid){
         type:"GET",
         url:"http://www.heijiang.top/admin/photo/show/"+photoid,
         dataType:"json",
+        data:{
+            token:tokenGet(),
+        },
         success:function(data){
             var str = pdetail(data);
             var plCate = data.data.cate;
