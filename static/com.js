@@ -49,7 +49,9 @@ function tokenSet(data){
 }
 
 $(function(){
-    
+    if(tokenGet()){
+        $(".header-right").html("<div class='head-img' title='头像名称'><img src='public/home/index/img/weixin.jpg' width='50'></div>");
+    }
     $("#login-button-submit").click(function(){
         var username = $("#username").val();
         var password = $("#password").val();
@@ -73,7 +75,7 @@ $(function(){
                 tokenSet(data);
                 // var token = $.session.get('token');
                 // console.log(token);
-                $(".li1").html("还有谁");
+                $(".header-right").html("还有谁");
             },
             error:function (jqXHR){
                 console.log(jqXHR);

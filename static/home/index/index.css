@@ -58,6 +58,13 @@ body {
 /* 头部右边的登陆 */
 #box .header .header-right{
     float: right;
+    line-height: 50px;
+    margin-top: 15px;
+    margin-right: 5px;
+    width: 110px;
+    height: 50px;
+    background-color: red;
+    text-align: center;
 }
 #box .header .header-right li {
     display: block;
@@ -65,7 +72,7 @@ body {
     width: 60px;
     float: right;
     text-align: center;
-    margin-top: 19px;
+    margin-top: 5px;
     border-radius: 20px; 
     /* margin-left: 10px; */
     background-color: rgb(237, 49, 68);
