@@ -2,9 +2,14 @@ $(function(){
     // console.log(tokenGet());
     var articleid = Number(window.location.href.split('?')[1].split('=')[1]);
     // console.log(articleid);
+    if(tokenGet()) {
+        var token = '?token='+tokenGet();
+    } else {
+        var token = '';
+    }
     $.ajax({
         type:"GET",
-        url:"http://www.heijiang.top/home/article/uindex/"+articleid,
+        url:"http://www.heijiang.top/home/article/uindex/"+articleid+token,
         dataType:"json",
         success:function(data){
             var detailtitle = detitle(data);
