@@ -41,7 +41,7 @@ function re(data){
     var str2 = '';
     var str3 = '';
     for (var i = 0; i < cate_len; i++) {
-        str1 =  '<div class="con-right-div">'+
+        str1 =  '<div class="con-right-div" hrefid="'+cate[i].id+'">'+
                     '<p><a href="javascript:void(0);">'+cate[i].name+'>>></a></p>'+
                     '<div class="chayu-div">'+
                         '<ul>';

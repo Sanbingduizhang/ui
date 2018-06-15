@@ -225,3 +225,57 @@
     height: 40px;
     border-radius: 20px;
 }
+
+#box .header .header-right{
+    float: right;
+    line-height: 50px;
+    margin-top: 15px;
+    margin-right: 5px;
+    width: 110px;
+    height: 50px;
+    /* background-color: red; */
+    text-align: center;
+}
+#box .header .header-right .subZhu li {
+    display: block;
+    height: 40px;
+    width: 50px;
+    float: right;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 20px; 
+    /* margin-left: 10px; */
+    background-color: rgb(237, 49, 68);
+}
+
+#box .header .header-right .subZhu li a {
+    display: block;
+    height: 40px;
+    width: 50px;
+    line-height: 40px;
+}
+
+#box .header .header-right .subZhu li a:active {
+    color: blue;
+}
+
+#box .header .header-right .subZhu li:nth-child(2) {
+    margin-right: 5px;
+}
+
+/* 登录后显示相关内容样式 */
+#box .header-right .head-mess{
+    margin-top: -19px;
+    margin-left: 15px;
+    position: absolute;
+    width: 80px;
+    height: 200px;
+    /* border: 1px solid red; */
+    background-color: #fff;
+    z-index: 9999;
+    display: none;
+    font-size: 14px;
+}
+#box .header-right .head-mess a{
+    color: #5f5f5f
+}

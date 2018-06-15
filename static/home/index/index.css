@@ -56,7 +56,7 @@ body {
     background-color: #f0f1f2;
 }
 /* 头部右边的登陆 */
-#box .header .header-right{
+/* #box .header .header-right{
     float: right;
     line-height: 50px;
     margin-top: 15px;
@@ -69,19 +69,19 @@ body {
 #box .header .header-right li {
     display: block;
     height: 40px;
-    width: 60px;
+    width: 50px;
     float: right;
     text-align: center;
     margin-top: 5px;
     border-radius: 20px; 
-    /* margin-left: 10px; */
+     margin-left: 10px;
     background-color: rgb(237, 49, 68);
 }
 
 #box .header .header-right li a {
     display: block;
     height: 40px;
-    width: 60px;
+    width: 50px;
     line-height: 40px;
 }
 
@@ -91,7 +91,7 @@ body {
 
 #box .header .header-right li:nth-child(2) {
     margin-right: 5px;
-}
+} */
 /* 主要内容 */
 #box .content{
     width: 1140px;
@@ -183,7 +183,7 @@ body {
     
 }
 #box .content .con-right .con-right-div:hover{
-    cursor: pointer;
+    /* cursor: pointer; */
     background-color: #f0f1f2;
 }
 #box .content .con-right .con-right-div p{

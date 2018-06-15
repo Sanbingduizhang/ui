@@ -49,8 +49,22 @@ function tokenSet(data){
 }
 
 $(function(){
+    var submitStr = "<div class='head-img' title='头像名称'><img src='public/home/index/img/weixin.jpg' width='50'  style='border-radius:50%;'>"+
+    "<div class='head-mess'>"+
+        "<ul>"+
+            "<li><a href='javascript:void(0);'>基本资料</a></li>"+
+            "<li><a href='javascript:void(0);'>文章信息</a></li>"+
+            "<li><a href='javascript:void(0);'>相册信息</a></li>"+
+            "<li><a href='javascript:void(0);' class='loginOut'>退出</a></li>"+
+        "</ul>"+
+    "</div>"+
+"</div>";
+var outStr = "<ul class='subZhu'>"
+                "<li class='li1'><a id='linkZhu' href='javascript:void(0);'>注册</a></li>"+
+                "<li><a id='linkSub' href='javascript:void(0);'>登录</a></li></ul>"
+    //用户登陆相关
     if(tokenGet()){
-        $(".header-right").html("<div class='head-img' title='头像名称'><img src='public/home/index/img/weixin.jpg' width='50'></div>");
+        $(".header-right").html(submitStr);
     }
     $("#login-button-submit").click(function(){
         var username = $("#username").val();
@@ -75,12 +89,42 @@ $(function(){
                 tokenSet(data);
                 // var token = $.session.get('token');
                 // console.log(token);
-                $(".header-right").html("还有谁");
+                $(".header-right").html(submitStr);
             },
             error:function (jqXHR){
                 console.log(jqXHR);
             }
 
         });
+    });
+
+    //头像以及相关的信息展示
+    $(".header-right").on('mouseenter','.head-img',function(){
+        $(".head-mess").stop().slideDown();
+    });
+    $(".header-right").on('mouseleave','.head-img',function(){
+        $(".head-mess").stop().slideUp();
+    });
+    //用户退出相关
+    $(".header-right").on('click','.loginOut',function(){
+        if(confirm('确定退出')){
+            $.ajax({
+                type:"GET",
+                url:"http://www.heijiang.top/home/loginOut",
+                dataType:"json",
+                data:{
+                    token:tokenGet(),
+                },
+                success:function(data){
+                    console.log(data);
+                    $.cookie('token','');
+                    location.reload();
+                },
+                error:function (jqXHR){
+                    console.log(jqXHR);
+                }
+            });
+            
+        }
     });
 });

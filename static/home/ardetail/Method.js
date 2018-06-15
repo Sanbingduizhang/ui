@@ -1,6 +1,6 @@
 function detitle(data){
     var detail = data.data;
-    str = '<h1 class="hh">'+detail.title+'</h1>'+
+    str = '<h1 class="hh" cate="'+detail.cate+'" article_id="'+detail.id+'">'+detail.title+'</h1>'+
             '<p class="textinfo">'+
                 '<span>作者:<a href="">'+detail.user_info.name+'</a></span>'+
                 '<span>字数:'+detail.wordsnum+'</span>'+
