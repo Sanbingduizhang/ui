@@ -1,9 +1,9 @@
 $(function(){
-    // console.log(tokenGet());
+    console.log(tokenGet());
     var articleid = Number(window.location.href.split('?')[1].split('=')[1]);
-    // console.log(articleid);
+    var arrtoken = tokenGet().split('+');
     if(tokenGet()) {
-        var token = '?token='+tokenGet();
+        var token = '?token='+arrtoken[0]+'%2B'+arrtoken[1];
     } else {
         var token = '';
     }
