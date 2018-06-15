@@ -15,7 +15,7 @@ $(function(){
             var detailtitle = detitle(data);
             var detext = data.data.content;
             var catename = data.data.cates.name + '>';
-            var likeC = data.data.like_count_count;
+            var likeC = data.data.like_count.id;
             //文章标题
             $('.texttitle').html(detailtitle);
             //文章内容
@@ -25,7 +25,12 @@ $(function(){
             //导航上面的文章标题
             $('.titletitle').html(data.data.title);
             //如果用户登陆，则判定是否点赞，如果未点赞，则likeId置为0,
-            likeC ? $(".like").attr('likeId',likeC) : '';
+            if(likeC){
+                $(".like").attr('likeId',likeC);
+                $(".like").text('已赞');
+                $(".like").css('color','red');
+            }
+
         },
         error:function (jqXHR){
             console.log(jqXHR);
