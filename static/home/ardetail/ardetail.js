@@ -15,7 +15,7 @@ $(function(){
             var detailtitle = detitle(data);
             var detext = data.data.content;
             var catename = data.data.cates.name + '>';
-            var likeC = data.data.like_count.id;
+            var likeC = data.data.like_count;
             //文章标题
             $('.texttitle').html(detailtitle);
             //文章内容
