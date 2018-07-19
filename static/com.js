@@ -49,7 +49,7 @@ function tokenSet(data){
 }
 
 $(function(){
-    var submitStr = "<div class='head-img' title='头像名称'><img src='public/home/index/img/weixin.jpg' width='50'  style='border-radius:50%;'>"+
+    var submitStr = "<div class='head-img' title='头像名称'><img src='http://public.com/public/home/index/img/weixin.jpg' width='50'  style='border-radius:50%;'>"+
     "<div class='head-mess'>"+
         "<ul>"+
             "<li><a href='javascript:void(0);'>基本资料</a></li>"+
@@ -63,6 +63,7 @@ var outStr = "<ul class='subZhu'>"
                 "<li class='li1'><a id='linkZhu' href='javascript:void(0);'>注册</a></li>"+
                 "<li><a id='linkSub' href='javascript:void(0);'>登录</a></li></ul>"
     //用户登陆相关
+    console.log(tokenGet());
     if(tokenGet()){
         $(".header-right").html(submitStr);
     }
@@ -90,6 +91,9 @@ var outStr = "<ul class='subZhu'>"
                 // var token = $.session.get('token');
                 // console.log(token);
                 $(".header-right").html(submitStr);
+                $('#login').hide();
+                $('#bg').hide();
+                
             },
             error:function (jqXHR){
                 console.log(jqXHR);
