@@ -169,16 +169,16 @@
 <script src="static/home/index/Method.js"></script>
 <script src="static/home/index/index.js"></script>
 <script>
-    window.localStorage.setItem('vud-token-sign','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJoZWlqaWFuZy50b3AiLCJzdWIiOiJ2dWVAaGVpamlhbmcudG9wIiwiYXVkIjoidnVlLmhlaWppYW5nLnRvcCIsImV4cCI6MTUzNDU2OTY0NSwiaWF0IjoxNTM0NDgzMjQ1LCJ1aWQiOjEsInVzZXJjb2RlIjoiYWRtaW4ifQ.fYsTLgDhJdcqzYqHZX3KIscPHHxaTBRwE1K_-N2gkZA');
-    $.ajax({
-        url:'http://10.10.12.40:8081/api/bd-go',
-        type:'GET',
-        headers:{
-            'Authorization':window.localStorage.getItem('vud-token-sign'),
-        },
-        // 'Access-Control-Allow-Origin': '*', 
-        success:function (data) {
-            console.log(data);
-        }
-    })
+    window.localStorage.setItem('vue-token-sign','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJoZWlqaWFuZy50b3AiLCJzdWIiOiJ2dWVAaGVpamlhbmcudG9wIiwiYXVkIjoidnVlLmhlaWppYW5nLnRvcCIsImV4cCI6MTUzNDU2OTY0NSwiaWF0IjoxNTM0NDgzMjQ1LCJ1aWQiOjEsInVzZXJjb2RlIjoiYWRtaW4ifQ.fYsTLgDhJdcqzYqHZX3KIscPHHxaTBRwE1K_-N2gkZA');
+    // $.ajax({
+    //     url:'http://10.10.12.40:8081/api/bd-go',
+    //     type:'GET',
+    //     headers:{
+    //         'Authorization':window.localStorage.getItem('vud-token-sign'),
+    //     },
+    //     // 'Access-Control-Allow-Origin': '*', 
+    //     success:function (data) {
+    //         console.log(data);
+    //     }
+    // })
 </script>
