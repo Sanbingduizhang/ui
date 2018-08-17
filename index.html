@@ -7,6 +7,7 @@
     <meta name="keywords" content="个人网站，博客，论坛">
     <meta name="description" content="个人网站，博客，论坛，情感交流，文章写作，朋友">
     <meta name="author" content="Sanbingduizhang">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <link rel='shortcut icon' href='favicon.ico'>
     <link rel="stylesheet" href="static/home/index/index.css">
     <link rel="stylesheet" href="static/pagination.css">
@@ -102,7 +103,7 @@
                                     <li>
                                         <a href='javascript:void(0);'>关于我们</a>|</li>
                                     <li>
-                                        <a href='javascript:void(0);'>加入我们</a>|</li>
+                                        <a href='javascript:void(0);'>AI相关</a>|</li>
                                     <li>
                                         <a href='javascript:void(0);'>合作申请</a>|</li>
                                     <li>
@@ -167,3 +168,17 @@
 <script src="static/jquery.pagination.js"></script>
 <script src="static/home/index/Method.js"></script>
 <script src="static/home/index/index.js"></script>
+<script>
+    window.localStorage.setItem('vud-token-sign','eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJoZWlqaWFuZy50b3AiLCJzdWIiOiJ2dWVAaGVpamlhbmcudG9wIiwiYXVkIjoidnVlLmhlaWppYW5nLnRvcCIsImV4cCI6MTUzNDU2OTY0NSwiaWF0IjoxNTM0NDgzMjQ1LCJ1aWQiOjEsInVzZXJjb2RlIjoiYWRtaW4ifQ.fYsTLgDhJdcqzYqHZX3KIscPHHxaTBRwE1K_-N2gkZA');
+    $.ajax({
+        url:'http://10.10.12.40:8081/api/bd-go',
+        type:'GET',
+        headers:{
+            'Authorization':window.localStorage.getItem('vud-token-sign'),
+        },
+        // 'Access-Control-Allow-Origin': '*', 
+        success:function (data) {
+            console.log(data);
+        }
+    })
+</script>
